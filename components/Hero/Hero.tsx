@@ -4,6 +4,16 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import IPhoneMockup from './IPhoneMockup';
 import Button from '../ui/Button';
+import GlassCard from '../ui/GlassCard';
+// Redeploy trigger: ensure a new commit can surface on master for redeploys
+
+// Fallback wrapper in case GlassCard is unavailable at runtime
+const GlassCardShim = ({ children, className = '', ...rest }: any) => (
+  <div className={`glass-card ${className}`} {...rest}>
+    {children}
+  </div>
+);
+const GlassCardActual: any = typeof GlassCard === 'function' ? GlassCard : GlassCardShim;
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -78,18 +88,18 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.4 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto"
         >
-          {[
-            { value: '70%', label: 'Revenue Share', desc: 'You keep 70%', icon: '💰' },
-            { value: '24h', label: 'Setup Time', desc: 'Lightning fast', icon: '⚡' },
-            { value: '100%', label: 'Onboarding', desc: 'Zero upfront costs', icon: '🎯' },
-          ].map((s, idx) => (
-            <GlassCard key={idx} variant="elevated" className="text-center p-6 h-full">
-              <div className="text-4xl mb-2">{s.icon}</div>
-              <div className="text-3xl font-black gradient-text mb-2">{s.value}</div>
-              <div className="text-lg font-semibold mb-2">{s.label}</div>
-              <div className="text-slate-300 text-sm">{s.desc}</div>
-            </GlassCard>
-          ))}
+            {[
+              { value: '70%', label: 'Revenue Share', desc: 'You keep 70%', icon: '💰' },
+              { value: '24h', label: 'Setup Time', desc: 'Lightning fast', icon: '⚡' },
+              { value: '100%', label: 'Onboarding', desc: 'Zero upfront costs', icon: '🎯' },
+            ].map((s, idx) => (
+              <GlassCardActual key={idx} variant="elevated" className="text-center p-6 h-full">
+                <div className="text-4xl mb-2">{s.icon}</div>
+                <div className="text-3xl font-black gradient-text mb-2">{s.value}</div>
+                <div className="text-lg font-semibold mb-2">{s.label}</div>
+                <div className="text-slate-300 text-sm">{s.desc}</div>
+              </GlassCardActual>
+            ))}
         </motion.div>
       </div>
     </section>
