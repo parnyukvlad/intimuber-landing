@@ -9,8 +9,7 @@ import Footer from '../components/Footer';
 
 export default function Home() {
   return (
-    <main className="min-h-screen pt-20 relative">
-      <div className="animated-bg" aria-hidden="true" />
+    <main className="min-h-screen bg-[#0C0C0E]">
       <Navigation />
       <Hero />
       <WhatIsIntimuber />

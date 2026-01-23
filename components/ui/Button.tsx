@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ReactNode, useState } from 'react';
+import { ReactNode } from 'react';
 
 interface ButtonProps {
   children: ReactNode;
@@ -20,20 +20,18 @@ export default function Button({
   onClick,
   className = '',
 }: ButtonProps) {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const baseClasses = 'relative font-semibold rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/20 overflow-hidden';
+  const baseClasses = 'inline-flex items-center justify-center font-medium transition-all duration-200 rounded-lg';
 
   const variantClasses = {
-    primary: 'btn-primary text-white shadow-lg',
-    secondary: 'glass text-white hover:bg-white/10 border border-white/20',
-    ghost: 'text-white hover:bg-white/10',
+    primary: 'bg-white text-black hover:bg-white/90',
+    secondary: 'bg-[#141417] text-[#E8E8E8] border border-white/10 hover:border-white/20',
+    ghost: 'text-[#8A8A8A] hover:text-[#E8E8E8]',
   };
 
   const sizeClasses = {
-    sm: 'px-6 py-3 text-sm',
-    md: 'px-8 py-4 text-base',
-    lg: 'px-10 py-5 text-lg',
+    sm: 'px-4 py-2 text-sm',
+    md: 'px-6 py-3 text-base',
+    lg: 'px-8 py-4 text-lg',
   };
 
   const buttonClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
@@ -43,11 +41,7 @@ export default function Button({
       <motion.a
         href={href}
         className={buttonClasses}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        animate={isHovered ? { scale: 1.05 } : { scale: 1 }}
-        whileTap={{ scale: 0.95 }}
-        transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        whileTap={{ scale: 0.98 }}
       >
         {children}
       </motion.a>
@@ -58,11 +52,7 @@ export default function Button({
     <motion.button
       onClick={onClick}
       className={buttonClasses}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      animate={isHovered ? { scale: 1.05 } : { scale: 1 }}
-      whileTap={{ scale: 0.95 }}
-      transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      whileTap={{ scale: 0.98 }}
     >
       {children}
     </motion.button>

@@ -1,93 +1,59 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import GlassCard from '@/components/ui/GlassCard';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 export default function Features() {
   const features = [
     {
-      icon: '🧠',
-      title: 'Intelligent AI Conversations',
-      description: 'Powered by dual-model AI with persistent memory for coherent interactions.',
-      bar: 'from-blue-500 to-cyan-500',
+      title: 'Conversational AI',
+      description: 'Advanced NLP models for consistent and high-converting interactions.',
     },
     {
-      icon: '💬',
-      title: 'Automated Sales Funnel',
-      description: 'Smoothly transitions from chat to monetization with zero manual steps.',
-      bar: 'from-pink-500 to-purple-500',
+      title: 'Monetization Engine',
+      description: 'Automated sales funnels designed for maximum retention.',
     },
     {
-      icon: '🎭',
-      title: 'Personality Adaptation',
-      description: 'Consistent persona that adapts to user tone and engagement.',
-      bar: 'from-indigo-500 to-indigo-300',
+      title: 'Identity Protection',
+      description: 'End-to-end encryption for all media and sensitive communications.',
     },
     {
-      icon: '🌐',
-      title: 'Multi-Language Support',
-      description: 'Native support for multiple languages for global reach.',
-      bar: 'from-teal-400 to-cyan-400',
+      title: 'Global Optimization',
+      description: 'Automated localization for different timezones and languages.',
     },
     {
-      icon: '📊',
-      title: 'Performance Analytics',
-      description: 'Real-time dashboard with earnings and metrics.',
-      bar: 'from-purple-400 to-pink-400',
+      title: 'Real-time Analytics',
+      description: 'Granular data on conversions, retention, and revenue performance.',
     },
     {
-      icon: '🔐',
-      title: 'End-to-End Encryption',
-      description: 'Media stored with end-to-end encryption for privacy.',
-      bar: 'from-sky-400 to-indigo-500',
+      title: 'Secure Payouts',
+      description: 'Regular and transparent payment cycles via preferred methods.',
     },
   ];
 
   return (
-    <section className="py-20 px-4" id="features">
+    <section className="py-24 px-6 border-t border-white/5" id="features">
       <div className="container mx-auto">
         <SectionHeading
-          title="Advanced AI Features"
-          subtitle="Everything you need to automate your content monetization"
+          title="Core Capabilities"
+          subtitle="Everything required for professional automation."
         />
 
-        <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, staggerChildren: 0.1 }}
-        >
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {features.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ scale: 1.05 }}
-              className="group"
-            >
-              <GlassCard>
-                <div className={`w-full h-1 rounded-t mb-4 bg-gradient-to-r ${feature.bar}`} />
-                <motion.div
-                  className="text-4xl mb-4"
-                  whileHover={{ rotate: 5 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                >
-                  {feature.icon}
-                </motion.div>
-                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all duration-300">
-                  {feature.title}
-                </h3>
-                <p className="text-white/70 leading-relaxed">
-                  {feature.description}
-                </p>
-              </GlassCard>
-            </motion.div>
+            <GlassCard key={index} className="p-8">
+              <div className="w-8 h-8 rounded bg-white/5 border border-white/10 mb-6 flex items-center justify-center">
+                <div className="w-2 h-2 rounded-full bg-white/20" />
+              </div>
+              <h3 className="text-lg font-medium text-[#E8E8E8] mb-3">
+                {feature.title}
+              </h3>
+              <p className="text-[#8A8A8A] text-sm leading-relaxed">
+                {feature.description}
+              </p>
+            </GlassCard>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

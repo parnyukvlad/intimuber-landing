@@ -1,68 +1,43 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Button from '@/components/ui/Button';
 
 export default function Footer() {
   return (
-    <footer className="py-16 px-4 border-t border-white/10">
+    <footer className="py-24 px-6 border-t border-white/5 bg-[#0C0C0E]">
       <div className="container mx-auto">
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-4">
-            Ready to Start Earning?
+        <div className="text-center max-w-2xl mx-auto">
+          <h2 className="text-3xl font-medium text-[#E8E8E8] mb-6">
+            Begin Automation
           </h2>
-          <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-            Join the Intimuber agency and let AI handle your monetization.
-            Zero effort, maximum revenue.
+          <p className="text-[#8A8A8A] mb-10">
+            Submit an inquiry to receive a detailed breakdown of our AI services and onboarding process.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20">
             <Button
               size="lg"
-              href="mailto:parnyuk.vladislav@gmail.com?subject=Intimuber%20Agency%20Inquiry&body=Hi%20Intimuber%20team,%0A%0AI'm%20interested%20in%20your%20AI%20automation%20agency%20for%20models.%20Please%20tell%20me%20more%20about%20the%20onboarding%20process.%0A%0ABest%20regards,"
+              href="mailto:parnyuk.vladislav@gmail.com"
             >
-              Start Your Free Inquiry
+              Contact Agency
             </Button>
-
-            <Button variant="ghost" size="lg" href="#hero">
-              Back to Top ↑
+            <Button variant="ghost" size="lg" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+              Back to Top
             </Button>
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="border-t border-white/10 pt-8"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-white/60 text-sm">
-              © 2026 Intimuber Agency. Part of the FeetGuru Ecosystem.
-            </div>
-
-            <div className="flex space-x-6 text-sm text-white/60">
-              <a href="mailto:parnyuk.vladislav@gmail.com" className="hover:text-white transition-colors">
-                Contact
-              </a>
-              <span>•</span>
-              <a href="#privacy" className="hover:text-white transition-colors">
-                Privacy
-              </a>
-              <span>•</span>
-              <a href="#terms" className="hover:text-white transition-colors">
-                Terms
-              </a>
-            </div>
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="text-[#8A8A8A] text-xs uppercase tracking-widest">
+            © 2026 INTIMUBER
           </div>
-        </motion.div>
+
+          <div className="flex space-x-8 text-xs text-[#8A8A8A]">
+            <a href="#" className="hover:text-[#E8E8E8] transition-colors">Privacy</a>
+            <a href="#" className="hover:text-[#E8E8E8] transition-colors">Terms</a>
+            <a href="mailto:parnyuk.vladislav@gmail.com" className="hover:text-[#E8E8E8] transition-colors">Email</a>
+          </div>
+        </div>
       </div>
     </footer>
   );

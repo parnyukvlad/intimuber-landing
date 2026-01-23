@@ -1,33 +1,39 @@
- 'use client';
+'use client';
 
- import Link from 'next/link';
- import { motion } from 'framer-motion';
+import Link from 'next/link';
 
- export default function Navigation() {
-   const items = [
-     { href: '#how-it-works', label: 'How It Works' },
-     { href: '#features', label: 'Features' },
-     { href: '#revenue', label: 'Revenue' },
-     { href: '#ecosystem', label: 'Ecosystem' },
-     { href: '#start', label: 'Start' },
-   ];
+export default function Navigation() {
+  const items = [
+    { href: '#how-it-works', label: 'Process' },
+    { href: '#features', label: 'Features' },
+    { href: '#revenue', label: 'Revenue' },
+    { href: '#ecosystem', label: 'Ecosystem' },
+  ];
 
-   return (
-     <header className="fixed top-0 left-0 w-full z-50 bg-white/5 border-b border-white/10 backdrop-filter backdrop-blur-md">
-       <nav className="container mx-auto px-4 py-3 flex items-center justify-between">
-         <div className="flex items-center space-x-3">
-           <div className="text-2xl font-black gradient-text">INTIMUBER</div>
-         </div>
-         <ul className="hidden md:flex items-center space-x-6 text-white/80">
-           {items.map((it) => (
-             <li key={it.label}>
-               <Link href={it.href} className="hover:text-white transition-colors">
-                 {it.label}
-               </Link>
-             </li>
-           ))}
-         </ul>
-       </nav>
-     </header>
-   );
- }
+  return (
+    <header className="fixed top-0 left-0 w-full z-50 bg-[#0C0C0E]/80 backdrop-blur-md border-b border-white/5">
+      <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
+        <Link href="/" className="text-xl font-medium tracking-tight text-[#E8E8E8]">
+          INTIMUBER
+        </Link>
+        <ul className="hidden md:flex items-center space-x-8 text-sm font-medium">
+          {items.map((it) => (
+            <li key={it.label}>
+              <Link href={it.href} className="text-[#8A8A8A] hover:text-[#E8E8E8] transition-colors">
+                {it.label}
+              </Link>
+            </li>
+          ))}
+          <li>
+            <Link 
+              href="mailto:parnyuk.vladislav@gmail.com" 
+              className="bg-white text-black px-4 py-2 rounded-lg hover:bg-white/90 transition-colors"
+            >
+              Contact
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  );
+}

@@ -9,16 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'bg-dark': '#0D0D1A',
-        'text-light': '#F5EFFF',
-        'glass-border': 'rgba(255, 255, 255, 0.1)',
+        'bg-dark': '#0C0C0E',
+        'surface': '#141417',
+        'text-primary': '#E8E8E8',
+        'text-secondary': '#8A8A8A',
+        'accent': '#2DD4BF', // Teal
+        'border-subtle': 'rgba(255, 255, 255, 0.06)',
       },
       fontFamily: {
-        outfit: ['Outfit', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
       },
       backgroundImage: {
-        'primary-gradient': 'linear-gradient(180deg, #224BDA 0%, #E93AB8 100%)',
-        'secondary-gradient': 'linear-gradient(180deg, #C77DFF 0%, #9D4EDD 100%)',
+        'premium-gradient': 'linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%)',
       },
     },
   },
