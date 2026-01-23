@@ -9,37 +9,43 @@ export default function Features() {
     {
       icon: '🧠',
       title: 'Intelligent AI Conversations',
-      description: 'Powered by dual-model AI architecture with persistent memory. Models remember interactions and maintain coherent relationships.',
+      description: 'Powered by dual-model AI with persistent memory for coherent interactions.',
+      bar: 'from-blue-500 to-cyan-500',
     },
     {
       icon: '💬',
       title: 'Automated Sales Funnel',
-      description: 'Seamlessly transitions from casual conversation to monetization, handling PPV offers without manual intervention.',
+      description: 'Smoothly transitions from chat to monetization with zero manual steps.',
+      bar: 'from-pink-500 to-purple-500',
     },
     {
       icon: '🎭',
       title: 'Personality Adaptation',
-      description: 'Each model maintains consistent, unique persona that dynamically reacts to user tone and engagement level.',
+      description: 'Consistent persona that adapts to user tone and engagement.',
+      bar: 'from-indigo-500 to-indigo-300',
     },
     {
       icon: '🌐',
       title: 'Multi-Language Support',
-      description: 'Native support for multiple languages, allowing global users to interact in their preferred tongue.',
+      description: 'Native support for multiple languages for global reach.',
+      bar: 'from-teal-400 to-cyan-400',
     },
     {
       icon: '📊',
       title: 'Performance Analytics',
-      description: 'Real-time dashboard with earnings, transaction history, and detailed performance metrics for complete transparency.',
+      description: 'Real-time dashboard with earnings and metrics.',
+      bar: 'from-purple-400 to-pink-400',
     },
     {
       icon: '🔐',
       title: 'End-to-End Encryption',
-      description: 'All media stored with end-to-end encryption. Only decrypted for end-users upon successful purchase.',
+      description: 'Media stored with end-to-end encryption for privacy.',
+      bar: 'from-sky-400 to-indigo-500',
     },
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section className="py-20 px-4" id="features">
       <div className="container mx-auto">
         <SectionHeading
           title="Advanced AI Features"
@@ -64,6 +70,7 @@ export default function Features() {
               className="group"
             >
               <GlassCard>
+                <div className={`w-full h-1 rounded-t mb-4 bg-gradient-to-r ${feature.bar}`} />
                 <motion.div
                   className="text-4xl mb-4"
                   whileHover={{ rotate: 5 }}

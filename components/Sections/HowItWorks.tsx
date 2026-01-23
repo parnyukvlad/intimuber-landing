@@ -41,6 +41,8 @@ export default function HowItWorks() {
         />
 
         <div className="relative max-w-6xl mx-auto">
+          {/* Subtle section accent under heading for premium feel */}
+          <div className="w-44 h-1 mx-auto mb-6 bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500 rounded-full" />
           {/* Connection lines for desktop */}
           <div className="hidden md:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 via-pink-500 to-purple-500 opacity-30" />
 

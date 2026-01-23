@@ -34,7 +34,7 @@ export default function Revenue() {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-white/5 to-transparent">
+    <section id="revenue" className="py-20 px-4 bg-gradient-to-b from-white/5 to-transparent">
       <div className="container mx-auto">
         <SectionHeading
           title="Revenue & Payouts"

@@ -84,7 +84,7 @@ export default function WhatIsIntimuber() {
                   }}
                   whileHover={{ scale: 1.1, rotate: 5 }}
                 >
-                  <span className="text-4xl filter drop-shadow-lg">{feature.icon}</span>
+                  <span className="text-5xl filter drop-shadow-lg">{feature.icon}</span>
                 </motion.div>
 
                 <motion.h3
