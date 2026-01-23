@@ -61,7 +61,7 @@ export default function Revenue() {
                 >
                   <AnimatedCounter
                     from={0}
-                    to={parseInt(stat.value)}
+                    to={stat.value}
                     suffix={stat.suffix}
                     duration={1500}
                   />
