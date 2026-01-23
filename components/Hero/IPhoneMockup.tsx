@@ -1,0 +1,74 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+
+export default function IPhoneMockup() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 1, delay: 0.5 }}
+      className="relative flex items-center justify-center"
+    >
+      {/* iPhone 14 Pro Max Frame */}
+      <div className="relative w-[320px] h-[690px] bg-black rounded-[3rem] p-2 shadow-2xl glow glow-pulse">
+        {/* Dynamic Island */}
+        <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-black rounded-full z-10" />
+
+        {/* Screen */}
+        <div className="relative w-full h-full bg-black rounded-[2.5rem] overflow-hidden">
+          {/* Video Content */}
+          <video
+            className={`w-full h-full object-cover ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
+            autoPlay
+            muted
+            loop
+            playsInline
+            onLoadedData={() => setIsLoaded(true)}
+          >
+            <source src="/videos/demo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          {/* Loading placeholder */}
+          {!isLoaded && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-white text-sm">Loading demo...</div>
+            </div>
+          )}
+
+          {/* Subtle overlay gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+        </div>
+      </div>
+
+      {/* Floating particles effect */}
+      <div className="absolute -inset-20 pointer-events-none">
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full opacity-30"
+            animate={{
+              x: [0, Math.random() * 100 - 50],
+              y: [0, Math.random() * 100 - 50],
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+          />
+        ))}
+      </div>
+    </motion.div>
+  );
+}
