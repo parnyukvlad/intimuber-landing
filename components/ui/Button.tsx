@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 
 interface ButtonProps {
   children: ReactNode;
@@ -20,6 +20,8 @@ export default function Button({
   onClick,
   className = '',
 }: ButtonProps) {
+  const [isHovered, setIsHovered] = useState(false);
+
   const baseClasses = 'relative font-semibold rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/20 overflow-hidden';
 
   const variantClasses = {
@@ -41,8 +43,11 @@ export default function Button({
       <motion.a
         href={href}
         className={buttonClasses}
-        whileHover={{ scale: 1.05 }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        animate={isHovered ? { scale: 1.05 } : { scale: 1 }}
         whileTap={{ scale: 0.95 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
       >
         {children}
       </motion.a>
@@ -53,8 +58,11 @@ export default function Button({
     <motion.button
       onClick={onClick}
       className={buttonClasses}
-      whileHover={{ scale: 1.05 }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      animate={isHovered ? { scale: 1.05 } : { scale: 1 }}
       whileTap={{ scale: 0.95 }}
+      transition={{ type: "spring", stiffness: 400, damping: 17 }}
     >
       {children}
     </motion.button>

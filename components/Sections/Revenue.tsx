@@ -1,42 +1,9 @@
 'use client';
 
-import { motion, useMotionValue, useTransform } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import GlassCard from '@/components/ui/GlassCard';
-import SectionHeading from '@/components/ui/SectionHeading';
-
-function AnimatedCounter({ from, to, suffix = '' }: { from: number; to: number; suffix?: string }) {
-  const [count, setCount] = useState(from);
-  const nodeRef = useMotionValue(from);
-
-  const rounded = useTransform(nodeRef, (latest) => Math.round(latest));
-
-  useEffect(() => {
-    const controls = nodeRef.on("change", (latest) => {
-      setCount(Math.round(latest));
-    });
-
-    const timer = setTimeout(() => {
-      nodeRef.set(to);
-    }, 500);
-
-    return () => {
-      controls();
-      clearTimeout(timer);
-    };
-  }, [nodeRef, to]);
-
-  return (
-    <motion.span
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-    >
-      {count}{suffix}
-    </motion.span>
-  );
-}
+import { motion } from 'framer-motion';
+import GlassCard from '../ui/GlassCard';
+import SectionHeading from '../ui/SectionHeading';
+import AnimatedCounter from '../ui/AnimatedCounter';
 
 export default function Revenue() {
   const revenueStats = [
@@ -92,7 +59,12 @@ export default function Revenue() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.2, type: "spring" }}
                 >
-                  <AnimatedCounter from={0} to={stat.value} suffix={stat.suffix} />
+                  <AnimatedCounter
+                    from={0}
+                    to={parseInt(stat.value)}
+                    suffix={stat.suffix}
+                    duration={1500}
+                  />
                 </motion.div>
                 <h3 className="text-lg font-bold mb-2 text-white">
                   {stat.label}
