@@ -1,39 +1,87 @@
-'use client';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 
-import Link from 'next/link';
+const Navigation = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-export default function Navigation() {
-  const items = [
-    { href: '#how-it-works', label: 'Process' },
-    { href: '#features', label: 'Features' },
-    { href: '#revenue', label: 'Revenue' },
-    { href: '#ecosystem', label: 'Ecosystem' },
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: 'How It Works', href: '#how-it-works' },
+    { name: 'Features', href: '#features' },
+    { name: 'Revenue', href: '#revenue' },
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-[#0C0C0E]/80 backdrop-blur-md border-b border-white/5">
-      <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="text-xl font-medium tracking-tight text-[#E8E8E8]">
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'py-4 bg-background/80 backdrop-blur-lg border-b border-white/5' : 'py-6 bg-transparent'
+      }`}
+    >
+      <div className="container mx-auto px-6 flex items-center justify-between">
+        <div className="text-2xl font-bold tracking-tighter text-white">
           INTIMUBER
-        </Link>
-        <ul className="hidden md:flex items-center space-x-8 text-sm font-medium">
-          {items.map((it) => (
-            <li key={it.label}>
-              <Link href={it.href} className="text-[#8A8A8A] hover:text-[#E8E8E8] transition-colors">
-                {it.label}
-              </Link>
-            </li>
-          ))}
-          <li>
-            <Link 
-              href="mailto:parnyuk.vladislav@gmail.com" 
-              className="bg-white text-black px-4 py-2 rounded-lg hover:bg-white/90 transition-colors"
+        </div>
+
+        {/* Desktop Nav */}
+        <div className="hidden md:flex items-center space-x-8">
+          {navLinks.map((link) => (
+            <a 
+              key={link.name} 
+              href={link.href}
+              className="text-sm font-medium text-text-secondary hover:text-white transition-colors"
             >
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+              {link.name}
+            </a>
+          ))}
+          <button className="px-6 py-2.5 bg-gradient-primary rounded-full text-sm font-semibold text-white shadow-lg shadow-accent-primary/20 hover:scale-105 transition-transform">
+            Start Inquiry
+          </button>
+        </div>
+
+        {/* Mobile Toggle */}
+        <div className="md:hidden">
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-white p-2"
+          >
+            {isMobileMenuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="md:hidden absolute top-full left-0 right-0 bg-surface border-b border-white/5 p-6 space-y-4"
+        >
+          {navLinks.map((link) => (
+            <a 
+              key={link.name} 
+              href={link.href}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block text-lg font-medium text-text-secondary hover:text-white"
+            >
+              {link.name}
+            </a>
+          ))}
+          <button className="w-full px-6 py-3 bg-gradient-primary rounded-full text-base font-semibold text-white shadow-lg shadow-accent-primary/20">
+            Start Inquiry
+          </button>
+        </motion.div>
+      )}
+    </nav>
   );
-}
+};
+
+export default Navigation;

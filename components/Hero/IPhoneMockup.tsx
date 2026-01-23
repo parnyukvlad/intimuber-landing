@@ -1,48 +1,54 @@
-'use client';
-
+import React from 'react';
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
 
-export default function IPhoneMockup() {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [hasError, setHasError] = useState(false);
-
-  useEffect(() => {
-    const video = document.createElement('video');
-    video.preload = 'metadata';
-    video.src = '/videos/demo.mp4';
-    video.onloadeddata = () => setIsLoaded(true);
-    video.onerror = () => setHasError(true);
-  }, []);
-
+const IPhoneMockup = () => {
   return (
-    <div className="relative flex items-center justify-center">
-      <div className="relative w-[300px] h-[640px] bg-[#0C0C0E] rounded-[3rem] p-3 border border-white/10 shadow-2xl">
-        {/* Screen */}
-        <div className="relative w-full h-full bg-[#0C0C0E] rounded-[2.5rem] overflow-hidden">
-          {!hasError ? (
-            <video
-              className={`w-full h-full object-cover transition-opacity duration-700 ${
-                isLoaded ? 'opacity-100' : 'opacity-0'
-              }`}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-            >
-              <source src="/videos/demo.mp4" type="video/mp4" />
-            </video>
-          ) : (
-            <div className="w-full h-full bg-[#141417] flex items-center justify-center">
-              <span className="text-[#8A8A8A] text-xs">Preview</span>
-            </div>
-          )}
+    <div className="relative w-full max-w-[320px] mx-auto lg:max-w-[360px]">
+      {/* Glow Effect behind phone */}
+      <div className="absolute -inset-4 bg-accent-primary/20 blur-3xl rounded-[3rem] opacity-50" />
+      
+      <motion.div 
+        animate={{ 
+          y: [0, -15, 0],
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+        className="relative z-10"
+      >
+        {/* iPhone Frame */}
+        <div className="relative aspect-[393/852] bg-[#000] rounded-[3.5rem] border-[8px] border-[#1C1C1E] shadow-2xl overflow-hidden ring-1 ring-white/10">
           
           {/* Dynamic Island */}
-          <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-24 h-6 bg-black rounded-full z-10" />
+          <div className="absolute top-2 left-1/2 -translate-x-1/2 w-32 h-8 bg-black rounded-3xl z-30 flex items-center justify-end px-4">
+            <div className="w-2 h-2 rounded-full bg-[#1C1C1E]" />
+          </div>
+
+          {/* Video Content */}
+          <div className="absolute inset-0 z-10">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="w-full h-full object-cover"
+            >
+              <source src="/videos/demo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          {/* Reflection overlay */}
+          <div className="absolute inset-0 z-20 pointer-events-none bg-gradient-to-tr from-white/5 to-transparent opacity-50" />
         </div>
-      </div>
+
+        {/* Shadow below phone */}
+        <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[80%] h-6 bg-black/40 blur-xl rounded-full" />
+      </motion.div>
     </div>
   );
-}
+};
+
+export default IPhoneMockup;

@@ -1,44 +1,37 @@
-'use client';
+import React from 'react';
 
-import Button from '@/components/ui/Button';
-
-export default function Footer() {
+const Footer = () => {
   return (
-    <footer className="py-24 px-6 border-t border-white/5 bg-[#0C0C0E]">
-      <div className="container mx-auto">
-        <div className="text-center max-w-2xl mx-auto">
-          <h2 className="text-3xl font-medium text-[#E8E8E8] mb-6">
-            Begin Automation
-          </h2>
-          <p className="text-[#8A8A8A] mb-10">
-            Submit an inquiry to receive a detailed breakdown of our AI services and onboarding process.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-20">
-            <Button
-              size="lg"
-              href="mailto:parnyuk.vladislav@gmail.com"
-            >
-              Contact Agency
-            </Button>
-            <Button variant="ghost" size="lg" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-              Back to Top
-            </Button>
-          </div>
-        </div>
-
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-[#8A8A8A] text-xs uppercase tracking-widest">
-            © 2026 INTIMUBER
+    <footer className="py-12 bg-background border-t border-white/5">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+          <div>
+            <div className="text-xl font-bold tracking-tighter text-white mb-2">
+              INTIMUBER
+            </div>
+            <p className="text-sm text-text-secondary">
+              Premium automation for premium creators.
+            </p>
           </div>
 
-          <div className="flex space-x-8 text-xs text-[#8A8A8A]">
-            <a href="#" className="hover:text-[#E8E8E8] transition-colors">Privacy</a>
-            <a href="#" className="hover:text-[#E8E8E8] transition-colors">Terms</a>
-            <a href="mailto:parnyuk.vladislav@gmail.com" className="hover:text-[#E8E8E8] transition-colors">Email</a>
+          <div className="flex items-center gap-8 text-sm text-text-secondary">
+            <a href="#" className="hover:text-white transition-colors">Privacy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms</a>
+            <a href="#" className="hover:text-white transition-colors">Contact</a>
+          </div>
+
+          <div className="text-center md:text-right">
+            <div className="text-xs text-text-secondary mb-1">
+              Part of the <span className="text-accent-primary font-semibold">FeetGuru</span> Ecosystem
+            </div>
+            <p className="text-xs text-text-secondary/60">
+              © {new Date().getFullYear()} Intimuber. All rights reserved.
+            </p>
           </div>
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
