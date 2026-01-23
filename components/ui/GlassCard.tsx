@@ -7,25 +7,61 @@ interface GlassCardProps {
   children: ReactNode;
   className?: string;
   hover?: boolean;
+  variant?: 'default' | 'elevated' | 'minimal';
+  padding?: 'sm' | 'md' | 'lg';
 }
 
-export default function GlassCard({ children, className = '', hover = true }: GlassCardProps) {
-  const baseClasses = 'glass rounded-2xl p-8 backdrop-blur-xl border';
+export default function GlassCard({
+  children,
+  className = '',
+  hover = true,
+  variant = 'default',
+  padding = 'md'
+}: GlassCardProps) {
+  const baseClasses = 'relative overflow-hidden';
+
+  const variantClasses = {
+    default: 'glass-card',
+    elevated: 'glass-card shadow-2xl',
+    minimal: 'glass bg-white/5 backdrop-blur-sm border-white/10'
+  };
+
+  const paddingClasses = {
+    sm: 'p-6',
+    md: 'p-8',
+    lg: 'p-10'
+  };
 
   const hoverClasses = hover
-    ? 'transition-all duration-300 hover:bg-white/10 hover:shadow-xl hover:shadow-pink-500/10 hover:border-white/20'
+    ? 'transition-all duration-500 ease-out hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/20'
     : '';
+
+  const classes = `${baseClasses} ${variantClasses[variant]} ${paddingClasses[padding]} ${hoverClasses} ${className}`;
 
   return (
     <motion.div
-      className={`${baseClasses} ${hoverClasses} ${className}`}
-      initial={{ opacity: 0, y: 20 }}
+      className={classes}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6 }}
-      whileHover={hover ? { scale: 1.02 } : {}}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      {children}
+      {/* Subtle inner glow */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 pointer-events-none" />
+
+      {/* Content */}
+      <div className="relative z-10">
+        {children}
+      </div>
+
+      {/* Hover effect overlay */}
+      {hover && (
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0"
+          whileHover={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+        />
+      )}
     </motion.div>
   );
 }
