@@ -1,16 +1,32 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function IPhoneMockup() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
+
+  useEffect(() => {
+    // Preload video for better performance
+    const video = document.createElement('video');
+    video.preload = 'metadata';
+    video.src = '/videos/demo.mp4';
+
+    video.onloadeddata = () => setIsLoaded(true);
+    video.onerror = () => setHasError(true);
+
+    return () => {
+      video.removeEventListener('loadeddata', () => setIsLoaded(true));
+      video.removeEventListener('error', () => setHasError(true));
+    };
+  }, []);
 
   return (
     <motion.div
       initial={{ scale: 0.8, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 1, delay: 0.5 }}
+      transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
       className="relative flex items-center justify-center"
     >
       {/* iPhone 14 Pro Max Frame */}
@@ -21,23 +37,47 @@ export default function IPhoneMockup() {
         {/* Screen */}
         <div className="relative w-full h-full bg-black rounded-[2.5rem] overflow-hidden">
           {/* Video Content */}
-          <video
-            className={`w-full h-full object-cover ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
-            autoPlay
-            muted
-            loop
-            playsInline
-            onLoadedData={() => setIsLoaded(true)}
-          >
-            <source src="/videos/demo.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          {!hasError ? (
+            <video
+              className={`w-full h-full object-cover transition-opacity duration-500 ${
+                isLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              onLoadedData={() => setIsLoaded(true)}
+              onError={() => setHasError(true)}
+            >
+              <source src="/videos/demo.mp4" type="video/mp4" />
+              <source src="/videos/demo.webm" type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-blue-900/20 to-pink-900/20 flex items-center justify-center">
+              <div className="text-white/60 text-sm text-center px-4">
+                Video demo preview
+              </div>
+            </div>
+          )}
 
           {/* Loading placeholder */}
-          {!isLoaded && (
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-white text-sm">Loading demo...</div>
-            </div>
+          {!isLoaded && !hasError && (
+            <motion.div
+              className="absolute inset-0 flex items-center justify-center bg-black/50"
+              initial={{ opacity: 1 }}
+              animate={{ opacity: isLoaded ? 0 : 1 }}
+              transition={{ duration: 0.3 }}
+            >
+              <motion.div
+                className="text-white/80 text-sm"
+                animate={{ opacity: [0.5, 1, 0.5] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                Loading demo...
+              </motion.div>
+            </motion.div>
           )}
 
           {/* Subtle overlay gradient */}
@@ -47,7 +87,7 @@ export default function IPhoneMockup() {
 
       {/* Floating particles effect */}
       <div className="absolute -inset-20 pointer-events-none">
-        {[...Array(6)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-2 h-2 bg-gradient-to-r from-blue-500 to-pink-500 rounded-full opacity-30"
@@ -61,6 +101,7 @@ export default function IPhoneMockup() {
               duration: 3 + Math.random() * 2,
               repeat: Infinity,
               delay: Math.random() * 2,
+              ease: "easeInOut",
             }}
             style={{
               left: `${Math.random() * 100}%`,

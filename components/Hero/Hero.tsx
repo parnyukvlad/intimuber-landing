@@ -1,10 +1,17 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'framer-motion';
 import IPhoneMockup from './IPhoneMockup';
-import Button from '@/components/ui/Button';
+import Button from '../ui/Button';
 
 export default function Hero() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-4 py-20 relative overflow-hidden">
       {/* Background effects */}
@@ -13,9 +20,9 @@ export default function Hero() {
       <div className="container mx-auto text-center relative z-10">
         {/* Logo/Brand */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, y: -30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-8"
         >
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-black gradient-text tracking-tight">
@@ -25,9 +32,9 @@ export default function Hero() {
 
         {/* Tagline */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="mb-12"
         >
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
@@ -42,8 +49,8 @@ export default function Hero() {
         {/* iPhone Mockup */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.4 }}
+          animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
           className="mb-12"
         >
           <IPhoneMockup />
@@ -51,9 +58,9 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           className="flex flex-col sm:flex-row gap-6 justify-center items-center"
         >
           <Button
@@ -71,8 +78,8 @@ export default function Hero() {
         {/* Stats */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          animate={isVisible ? { opacity: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
           className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto"
         >
           {[
@@ -83,8 +90,8 @@ export default function Hero() {
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+              animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.6, delay: 0.8 + index * 0.1, ease: "easeOut" }}
               className="glass p-6 rounded-xl"
             >
               <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
