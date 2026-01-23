@@ -1,9 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import GlassCard from '../ui/GlassCard';
-import SectionHeading from '../ui/SectionHeading';
-import Button from '../ui/Button';
+import GlassCard from '@/components/ui/GlassCard';
+import SectionHeading from '@/components/ui/SectionHeading';
+import Button from '@/components/ui/Button';
 
 export default function Ecosystem() {
   const ecosystem = [

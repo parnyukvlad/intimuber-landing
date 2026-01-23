@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import GlassCard from '../ui/GlassCard';
-import SectionHeading from '../ui/SectionHeading';
+import GlassCard from '@/components/ui/GlassCard';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 export default function Features() {
   const features = [

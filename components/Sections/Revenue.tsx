@@ -2,8 +2,8 @@
 
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import GlassCard from '../ui/GlassCard';
-import SectionHeading from '../ui/SectionHeading';
+import GlassCard from '@/components/ui/GlassCard';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 function AnimatedCounter({ from, to, suffix = '' }: { from: number; to: number; suffix?: string }) {
   const [count, setCount] = useState(from);

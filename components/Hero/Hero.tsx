@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import IPhoneMockup from './IPhoneMockup';
-import Button from '../ui/Button';
+import Button from '@/components/ui/Button';
 
 export default function Hero() {
   return (
