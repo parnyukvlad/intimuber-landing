@@ -6,11 +6,11 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div>
-            <div className="text-xl font-bold tracking-tighter text-white mb-2">
-              INTIMUBER
+            <div className="text-xl font-black tracking-tighter text-white mb-2">
+              ONLY<span className="text-accent-primary">PPV</span>
             </div>
             <p className="text-sm text-text-secondary">
-              Premium automation for premium creators.
+              The ultimate AI automation for OnlyFans creators.
             </p>
           </div>
 
@@ -21,11 +21,8 @@ const Footer = () => {
           </div>
 
           <div className="text-center md:text-right">
-            <div className="text-xs text-text-secondary mb-1">
-              Part of the <span className="text-accent-primary font-semibold">FeetGuru</span> Ecosystem
-            </div>
             <p className="text-xs text-text-secondary/60">
-              © {new Date().getFullYear()} Intimuber. All rights reserved.
+              © {new Date().getFullYear()} OnlyPPV. All rights reserved.
             </p>
           </div>
         </div>

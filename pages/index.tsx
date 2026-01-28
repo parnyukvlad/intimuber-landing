@@ -13,7 +13,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Intimuber | Scale Your Telegram. Automate Your Income.</title>
+        <title>OnlyPPV | Turn Your Telegram Into a 24/7 Money Machine</title>
+        <meta name="description" content="AI-powered automation for OnlyFans models. Turn your Telegram into a 24/7 money machine with an automated persona that sells your PPV content." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 

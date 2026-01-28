@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta name="description" content="Intimuber - Scale Your Telegram. Automate Your Income." />
+        <meta name="description" content="OnlyPPV - Turn Your Telegram Into a 24/7 Money Machine." />
       </Head>
       <body className="antialiased">
         <Main />

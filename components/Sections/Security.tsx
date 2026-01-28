@@ -4,18 +4,18 @@ import { ShieldCheck, Lock, EyeOff } from 'lucide-react';
 const securityFeatures = [
   {
     icon: Lock,
-    title: "End-to-End Encryption",
-    text: "All data transmission is secured using military-grade encryption standards."
+    title: "Secure Authentication",
+    text: "We use official Telegram Business APIs. No passwords or credentials required."
   },
   {
     icon: ShieldCheck,
-    title: "No Credential Access",
-    text: "Our system operates via API integrations that don't require your password."
+    title: "Data Privacy",
+    text: "Your media and customer data are encrypted and never shared with third parties."
   },
   {
     icon: EyeOff,
-    title: "Anonymous Storage",
-    text: "Your media remains your own. We use temporary, anonymous storage protocols."
+    title: "Discreet Operations",
+    text: "Your AI persona operates under your brand. OnlyPPV remains completely invisible."
   }
 ];
 
@@ -25,9 +25,9 @@ const Security = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <div className="lg:w-1/3">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">Your Privacy, Protected</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white">Built for Privacy</h2>
             <p className="text-text-secondary leading-relaxed">
-              We take security seriously. In an industry where trust is everything, we've built our platform with a security-first mindset.
+              In the PPV industry, discretion and security are non-negotiable. OnlyPPV is engineered to protect your identity and your content.
             </p>
           </div>
 

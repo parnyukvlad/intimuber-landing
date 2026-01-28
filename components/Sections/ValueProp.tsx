@@ -1,25 +1,43 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Zap, Globe } from 'lucide-react';
+import { UserCircle, Image, MessageSquare, Zap, BarChart3, ShieldCheck } from 'lucide-react';
 
 const props = [
   {
-    title: "Zero Account Access",
-    description: "Your security is our priority. We never ask for your Telegram credentials or personal login information.",
-    icon: Shield,
+    title: "Create AI Persona",
+    description: "Build a custom AI with flirty, playful, or dominant behavioral tones and a natural texting style.",
+    icon: UserCircle,
     color: "var(--color-accent-primary)"
   },
   {
-    title: "AI That Sells",
-    description: "Our proprietary AI models handle conversations that convert, maximizing your revenue while you sleep.",
-    icon: Zap,
+    title: "Media Library",
+    description: "Upload photos & videos, set prices in Telegram Stars, and organize into premium NSFW photo packs.",
+    icon: Image,
     color: "var(--color-accent-secondary)"
   },
   {
-    title: "Global Reach",
-    description: "Multi-language support allows you to reach an international audience without lifting a finger.",
-    icon: Globe,
+    title: "Smart Chatbot",
+    description: "24/7 context-aware conversations with human-like delays and multi-language support.",
+    icon: MessageSquare,
     color: "#3B82F6"
+  },
+  {
+    title: "Automated Selling",
+    description: "Disappearing free photos create urgency while our AI teases and converts fans into payers.",
+    icon: Zap,
+    color: "#F59E0B"
+  },
+  {
+    title: "Deep Analytics",
+    description: "Track engagement, retention, and earnings with detailed charts and conversion analysis.",
+    icon: BarChart3,
+    color: "#10B981"
+  },
+  {
+    title: "Secure & Profitable",
+    description: "Keep 70% of your earnings with secure USDT crypto payouts and protected data.",
+    icon: ShieldCheck,
+    color: "#6366F1"
   }
 ];
 
@@ -28,13 +46,13 @@ const ValueProp = () => {
     <section id="features" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-4">Why Intimuber?</h2>
+          <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-white">The OnlyPPV Advantage</h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
-            Experience the future of creator automation with our cutting-edge technology and secure infrastructure.
+            Everything you need to automate your Telegram business and scale your OnlyFans revenue on autopilot.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {props.map((prop, index) => (
             <motion.div
               key={prop.title}

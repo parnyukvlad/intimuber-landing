@@ -27,8 +27,8 @@ const Navigation = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <div className="text-2xl font-bold tracking-tighter text-white">
-          INTIMUBER
+        <div className="text-2xl font-black tracking-tighter text-white">
+          ONLY<span className="text-accent-primary">PPV</span>
         </div>
 
         {/* Desktop Nav */}
@@ -43,7 +43,7 @@ const Navigation = () => {
             </a>
           ))}
           <button className="px-6 py-2.5 bg-gradient-primary rounded-full text-sm font-semibold text-white shadow-lg shadow-accent-primary/20 hover:scale-105 transition-transform">
-            Start Inquiry
+            Get Started
           </button>
         </div>
 
@@ -76,7 +76,7 @@ const Navigation = () => {
             </a>
           ))}
           <button className="w-full px-6 py-3 bg-gradient-primary rounded-full text-base font-semibold text-white shadow-lg shadow-accent-primary/20">
-            Start Inquiry
+            Get Started
           </button>
         </motion.div>
       )}

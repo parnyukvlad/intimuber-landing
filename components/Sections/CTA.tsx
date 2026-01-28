@@ -14,9 +14,9 @@ const CTA = () => {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <h2 className="text-4xl lg:text-6xl font-bold mb-8">Ready to Scale?</h2>
+          <h2 className="text-4xl lg:text-6xl font-bold mb-8 text-white">Ready to Scale Your Income?</h2>
           <p className="text-xl text-text-secondary mb-12 max-w-2xl mx-auto">
-            Join the elite group of creators who have automated their Telegram income. Start your free inquiry today.
+            Join 200+ OnlyFans creators who are already automating their Telegram income with OnlyPPV.
           </p>
 
           <form 
@@ -29,13 +29,13 @@ const CTA = () => {
               className="flex-1 px-6 py-4 bg-surface border border-white/10 rounded-full text-white focus:outline-none focus:border-accent-primary transition-colors"
               required
             />
-            <button className="px-8 py-4 bg-gradient-primary rounded-full font-bold text-white shadow-lg shadow-accent-primary/20 hover:scale-105 transition-transform">
-              Inquire Now
+            <button className="px-8 py-4 bg-gradient-primary rounded-full font-bold text-white shadow-lg shadow-accent-primary/20 hover:scale-105 transition-transform whitespace-nowrap">
+              Get Started
             </button>
           </form>
 
           <p className="text-sm text-text-secondary italic">
-            "Join creators who earn while they sleep."
+            "Automate the chat. Focus on the content. Maximize the profit."
           </p>
         </motion.div>
       </div>

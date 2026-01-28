@@ -2,9 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const stats = [
-  { label: "Your Revenue Share", value: "70%", sub: "Keep more of what you earn" },
-  { label: "Setup Time", value: "24h", sub: "Go live almost instantly" },
-  { label: "Upfront Cost", value: "$0", sub: "No hidden fees or risks" },
+  { label: "Your Revenue Share", value: "70%", sub: "The highest split in the industry" },
+  { label: "Minimum Payout", value: "2000", sub: "Withdrawals in Telegram Stars" },
+  { label: "Payout Currency", value: "USDT", sub: "Instant crypto payouts on demand" },
 ];
 
 const Revenue = () => {
@@ -17,18 +17,18 @@ const Revenue = () => {
           
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl lg:text-5xl font-bold mb-8 leading-tight">
-                Transparent Earnings. <br />
-                <span className="text-gradient">No Compromises.</span>
+              <h2 className="text-3xl lg:text-5xl font-bold mb-8 leading-tight text-white">
+                Premium Earnings. <br />
+                <span className="text-gradient">Professional Payouts.</span>
               </h2>
               <p className="text-text-secondary text-lg mb-10 leading-relaxed">
-                We believe in fair compensation. Our model is built on your success. We only earn when you earn, ensuring our incentives are perfectly aligned.
+                We believe in total transparency. Our 70/30 split ensures you keep the lion's share of your hard-earned revenue while we handle the 24/7 sales operations.
               </p>
               
               <div className="space-y-6">
                 <p className="font-semibold text-white">Supported Payout Methods:</p>
                 <div className="flex flex-wrap gap-4">
-                  {['Bank Transfer', 'PayPal', 'Crypto (USDT/BTC)', 'Wise'].map((method) => (
+                  {['USDT (TRC20)', 'USDT (ERC20)', 'Telegram Stars'].map((method) => (
                     <div key={method} className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-text-secondary">
                       {method}
                     </div>

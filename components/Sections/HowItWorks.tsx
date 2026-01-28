@@ -4,23 +4,23 @@ import { motion } from 'framer-motion';
 const steps = [
   {
     number: "01",
-    title: "Inquiry",
-    description: "Submit a simple inquiry to see if your account qualifies for our automation."
+    title: "Connect",
+    description: "Link your Telegram Business account in under 60 seconds."
   },
   {
     number: "02",
-    title: "Demo",
-    description: "Get a personalized walkthrough of how the AI will manage your traffic."
+    title: "Create Persona",
+    description: "Build your unique AI character with custom personality traits and backstory."
   },
   {
     number: "03",
-    title: "Setup",
-    description: "Rapid integration without needing your login credentials. Done in under 24h."
+    title: "Upload Content",
+    description: "Add your PPV media library and set your pricing in Telegram Stars."
   },
   {
     number: "04",
-    title: "Earn",
-    description: "Start receiving payouts directly. Focus on content while we scale your income."
+    title: "Start Earning",
+    description: "Your AI persona engages fans and sells content 24/7 on complete autopilot."
   }
 ];
 
@@ -29,9 +29,9 @@ const HowItWorks = () => {
     <section id="how-it-works" className="py-24 bg-surface/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-20">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-4">The Path to Freedom</h2>
+          <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-white">Your Path to 24/7 Income</h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
-            From inquiry to earnings in four simple steps. We've streamlined the process for maximum efficiency.
+            Get up and running with OnlyPPV in minutes. We've automated the hard part so you can focus on creating.
           </p>
         </div>
 

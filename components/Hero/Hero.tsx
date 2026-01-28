@@ -21,19 +21,19 @@ const Hero = () => {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-5xl lg:text-7xl font-bold tracking-tight mb-6">
-                Scale Your Telegram. <br />
-                <span className="text-gradient">Automate Your Income.</span>
+                Turn Your Telegram Into a <br />
+                <span className="text-gradient">24/7 Money Machine.</span>
               </h1>
               <p className="text-xl text-text-secondary mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                AI-powered automation for independent creators. Keep 70% of everything you earn while our system handles the conversations.
+                AI persona sells your PPV content while you sleep. Built for OnlyFans Models, by OnlyFans Pros. Keep 70% of everything you earn.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
                 <button className="w-full sm:w-auto px-8 py-4 bg-gradient-primary rounded-full font-bold text-lg text-white shadow-xl shadow-accent-primary/30 hover:scale-105 transition-transform">
-                  Start Free Inquiry
+                  Automate My Telegram
                 </button>
                 <button className="w-full sm:w-auto px-8 py-4 bg-surface border border-white/10 rounded-full font-bold text-lg text-white hover:bg-white/5 transition-colors">
-                  See How It Works
+                  See Real Results
                 </button>
               </div>
 
@@ -45,7 +45,7 @@ const Hero = () => {
                     </div>
                   ))}
                 </div>
-                <p>Joined by 200+ creators this month</p>
+                <p>Joined by 200+ OnlyFans creators this month</p>
               </div>
             </motion.div>
           </div>
