@@ -3,30 +3,30 @@ import { motion } from 'framer-motion';
 import { UserCircle, Image, MessageSquare, Zap, BarChart3, ShieldCheck } from 'lucide-react';
 
 const props = [
-  {
-    title: "Create AI Persona",
-    description: "Build a custom AI with flirty, playful, or dominant behavioral tones and a natural texting style.",
-    icon: UserCircle,
-    color: "var(--color-accent-primary)"
-  },
+   {
+     title: "Create Your Autopilot",
+     description: "Build a custom sales automation with flirty, playful, or dominant behavioral tones and a natural texting style.",
+     icon: UserCircle,
+     color: "var(--color-accent-primary)"
+   },
   {
     title: "Media Library",
     description: "Upload photos & videos, set prices in Telegram Stars, and organize into premium NSFW photo packs.",
     icon: Image,
     color: "var(--color-accent-secondary)"
   },
-  {
-    title: "Smart Chatbot",
-    description: "24/7 context-aware conversations with human-like delays and multi-language support.",
-    icon: MessageSquare,
-    color: "#3B82F6"
-  },
-  {
-    title: "Automated Selling",
-    description: "Disappearing free photos create urgency while our AI teases and converts fans into payers.",
-    icon: Zap,
-    color: "#F59E0B"
-  },
+     {
+     title: "Smart Chatbot",
+     description: "24/7 context-aware conversations with human-like delays and multi-language support.",
+     icon: MessageSquare,
+     color: "#3B82F6"
+   },
+   {
+     title: "Automated Selling",
+     description: "Disappearing free photos create urgency while our autopilot teases and converts fans into payers.",
+     icon: Zap,
+     color: "#F59E0B"
+   },
   {
     title: "Deep Analytics",
     description: "Track engagement, retention, and earnings with detailed charts and conversion analysis.",
@@ -60,14 +60,17 @@ const ValueProp = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="liquid-glass p-8 flex flex-col items-center text-center group hover:border-white/20 transition-colors"
-            >
-              <div 
-                className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
-                style={{ backgroundColor: `${prop.color}15`, color: prop.color }}
-              >
-                <prop.icon size={32} />
-              </div>
+               className="liquid-glass relative p-8 flex flex-col items-center text-center group overflow-hidden hover:border-accent-primary/30 transition-colors"
+             >
+               <div
+                 className="relative w-16 h-16 rounded-2xl flex items-center justify-center mb-6 overflow-hidden group"
+                 style={{ backgroundColor: `${prop.color}15`, color: prop.color }}
+               >
+                 <div className="absolute inset-0 bg-accent-primary/10 blur-lg group-hover:bg-accent-primary/20 transition-all" />
+                 <div className="relative z-10">
+                   <prop.icon size={32} />
+                 </div>
+               </div>
               <h3 className="text-xl font-bold mb-4 text-white">{prop.title}</h3>
               <p className="text-text-secondary leading-relaxed">
                 {prop.description}

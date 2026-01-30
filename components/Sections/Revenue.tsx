@@ -45,11 +45,14 @@ const Revenue = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="p-8 bg-white/5 border border-white/5 rounded-3xl"
+                  className="relative p-8 bg-white/5 border border-white/5 rounded-3xl overflow-hidden group"
                 >
-                  <div className="text-4xl lg:text-5xl font-bold text-gradient mb-2">{stat.value}</div>
-                  <div className="text-xl font-semibold text-white mb-1">{stat.label}</div>
-                  <div className="text-text-secondary">{stat.sub}</div>
+                  <div className="absolute inset-0 bg-accent-primary/10 blur-lg group-hover:bg-accent-primary/20 transition-all" />
+                  <div className="relative z-10">
+                    <div className="text-4xl lg:text-5xl font-bold text-gradient mb-2">{stat.value}</div>
+                    <div className="text-xl font-semibold text-white mb-1">{stat.label}</div>
+                    <div className="text-text-secondary">{stat.sub}</div>
+                  </div>
                 </motion.div>
               ))}
             </div>

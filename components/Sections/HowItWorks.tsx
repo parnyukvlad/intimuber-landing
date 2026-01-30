@@ -20,7 +20,7 @@ const steps = [
   {
     number: "04",
     title: "Start Earning",
-    description: "Your AI persona engages fans and sells content 24/7 on complete autopilot."
+    description: "Send traffic to your Telegram business account. Our autopilot sells your content 24/7."
   }
 ];
 
@@ -49,9 +49,10 @@ const HowItWorks = () => {
                 transition={{ delay: index * 0.1 }}
                 className="relative z-10 flex flex-col items-center text-center"
               >
-                <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center text-xl font-bold text-white mb-6 shadow-lg shadow-accent-primary/20">
-                  {step.number}
-                </div>
+                 <div className="relative w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center text-xl font-bold text-white mb-6 shadow-lg shadow-accent-primary/20 overflow-hidden group">
+                   <div className="absolute inset-0 bg-accent-primary blur-xl opacity-50 group-hover:opacity-100 transition-all" />
+                   <span className="relative z-10">{step.number}</span>
+                 </div>
                 <h3 className="text-xl font-bold mb-4 text-white">{step.title}</h3>
                 <p className="text-text-secondary">
                   {step.description}

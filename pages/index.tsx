@@ -3,7 +3,10 @@ import Head from 'next/head';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero/Hero';
 import ValueProp from '@/components/Sections/ValueProp';
+import ChattingStyle from '@/components/Sections/ChattingStyle';
 import HowItWorks from '@/components/Sections/HowItWorks';
+import ContentControl from '@/components/Sections/ContentControl';
+import Overview from '@/components/Sections/Overview';
 import Revenue from '@/components/Sections/Revenue';
 import Security from '@/components/Sections/Security';
 import CTA from '@/components/Sections/CTA';
@@ -14,7 +17,7 @@ export default function Home() {
     <>
       <Head>
         <title>OnlyPPV | Turn Your Telegram Into a 24/7 Money Machine</title>
-        <meta name="description" content="AI-powered automation for OnlyFans models. Turn your Telegram into a 24/7 money machine with an automated persona that sells your PPV content." />
+        <meta name="description" content="Automated sales autopilot for OnlyFans models. Turn your Telegram into a 24/7 money machine with complete PPV content automation." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
@@ -24,7 +27,10 @@ export default function Home() {
         <main>
           <Hero />
           <ValueProp />
+          <ChattingStyle />
           <HowItWorks />
+          <ContentControl />
+          <Overview />
           <Revenue />
           <Security />
           <CTA />

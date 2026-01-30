@@ -23,15 +23,19 @@ const CTA = () => {
             className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-8"
             onSubmit={(e) => e.preventDefault()}
           >
-            <input 
-              type="email" 
-              placeholder="Enter your email" 
-              className="flex-1 px-6 py-4 bg-surface border border-white/10 rounded-full text-white focus:outline-none focus:border-accent-primary transition-colors"
-              required
-            />
-            <button className="px-8 py-4 bg-gradient-primary rounded-full font-bold text-white shadow-lg shadow-accent-primary/20 hover:scale-105 transition-transform whitespace-nowrap">
-              Get Started
-            </button>
+            <div className="relative flex-1 overflow-hidden group">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full px-6 py-4 bg-surface border border-white/10 rounded-full text-white focus:outline-none focus:border-accent-primary transition-colors"
+                required
+              />
+              <div className="absolute inset-0 bg-accent-primary/0 group-focus-within:bg-accent-primary/10 blur-lg transition-all" />
+            </div>
+             <button className="relative px-8 py-4 bg-gradient-primary rounded-full font-bold text-white shadow-lg shadow-accent-primary/20 hover:scale-105 transition-transform whitespace-nowrap overflow-hidden group">
+               <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
+               <span className="relative z-10">Get Started</span>
+             </button>
           </form>
 
           <p className="text-sm text-text-secondary italic">

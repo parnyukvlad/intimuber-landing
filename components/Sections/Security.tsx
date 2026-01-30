@@ -15,7 +15,7 @@ const securityFeatures = [
   {
     icon: EyeOff,
     title: "Discreet Operations",
-    text: "Your AI persona operates under your brand. OnlyPPV remains completely invisible."
+     text: "Your autopilot operates under your brand. OnlyPPV remains completely invisible."
   }
 ];
 
@@ -33,14 +33,17 @@ const Security = () => {
 
           <div className="lg:w-2/3 grid md:grid-cols-3 gap-8">
             {securityFeatures.map((feature) => (
-              <div key={feature.title} className="p-6">
-                <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6 text-accent-primary">
-                  <feature.icon size={24} />
+              <div key={feature.title} className="relative p-6 overflow-hidden group">
+                <div className="absolute inset-0 bg-accent-primary/10 blur-lg group-hover:bg-accent-primary/20 transition-all" />
+                <div className="relative z-10">
+                  <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6 text-accent-primary">
+                    <feature.icon size={24} />
+                  </div>
+                  <h3 className="text-lg font-bold mb-3 text-white">{feature.title}</h3>
+                  <p className="text-text-secondary text-sm">
+                    {feature.text}
+                  </p>
                 </div>
-                <h3 className="text-lg font-bold mb-3 text-white">{feature.title}</h3>
-                <p className="text-text-secondary text-sm">
-                  {feature.text}
-                </p>
               </div>
             ))}
           </div>

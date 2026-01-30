@@ -25,28 +25,21 @@ const Hero = () => {
                 <span className="text-gradient">24/7 Money Machine.</span>
               </h1>
               <p className="text-xl text-text-secondary mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                AI persona sells your PPV content while you sleep. Built for OnlyFans Models, by OnlyFans Pros. Keep 70% of everything you earn.
+                Our autopilot sells your PPV content while you sleep. Built for OnlyFans Models, by OnlyFans Pros. Keep 70% of everything you earn.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-                <button className="w-full sm:w-auto px-8 py-4 bg-gradient-primary rounded-full font-bold text-lg text-white shadow-xl shadow-accent-primary/30 hover:scale-105 transition-transform">
-                  Automate My Telegram
+                <button className="relative w-full sm:w-auto px-8 py-4 bg-gradient-primary rounded-full font-bold text-lg text-white shadow-xl shadow-accent-primary/30 hover:scale-105 transition-transform overflow-hidden group">
+                  <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
+                  <span className="relative z-10">Automate My Telegram</span>
                 </button>
-                <button className="w-full sm:w-auto px-8 py-4 bg-surface border border-white/10 rounded-full font-bold text-lg text-white hover:bg-white/5 transition-colors">
-                  See Real Results
-                </button>
+                <a href="#overview" className="relative w-full sm:w-auto px-8 py-4 bg-surface border border-white/10 rounded-full font-bold text-lg text-white hover:bg-white/5 transition-colors overflow-hidden group">
+                  <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
+                  <span className="relative z-10">See Real Results</span>
+                </a>
               </div>
 
-              <div className="mt-12 flex items-center justify-center lg:justify-start gap-6 text-sm text-text-secondary">
-                <div className="flex -space-x-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-8 h-8 rounded-full border-2 border-background bg-surface flex items-center justify-center">
-                      <div className="w-full h-full rounded-full bg-gradient-primary opacity-80" />
-                    </div>
-                  ))}
-                </div>
-                <p>Joined by 200+ OnlyFans creators this month</p>
-              </div>
+
             </motion.div>
           </div>
 
