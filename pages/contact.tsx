@@ -32,7 +32,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-sm text-text-secondary">Email</p>
-                      <p className="text-white font-medium">support@onlyppv.com</p>
+                      <p className="text-white font-medium">onlyppv@proton.me</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">
@@ -41,7 +41,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-sm text-text-secondary">Telegram</p>
-                      <p className="text-white font-medium">@onlyppv_support</p>
+                      <p className="text-white font-medium">@onlyppv_official</p>
                     </div>
                   </div>
                 </div>
@@ -52,14 +52,14 @@ export default function Contact() {
                 <p className="text-text-secondary mb-6 leading-relaxed">
                   Interested in partnerships or media coverage?
                 </p>
-                <div className="space-y-4">
+                  <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-lg bg-accent-primary/10 flex items-center justify-center text-accent-primary">
                       <Mail size={20} />
                     </div>
                     <div>
                       <p className="text-sm text-text-secondary">Email</p>
-                      <p className="text-white font-medium">business@onlyppv.com</p>
+                      <p className="text-white font-medium">parnyuk.vladislav@gmail.com</p>
                     </div>
                   </div>
                 </div>

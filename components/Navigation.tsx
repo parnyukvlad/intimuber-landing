@@ -18,6 +18,9 @@ const Navigation = () => {
     { name: 'How It Works', href: '#how-it-works' },
     { name: 'Features', href: '#features' },
     { name: 'Revenue', href: '#revenue' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'Privacy', href: '/privacy' },
+    { name: 'Terms', href: '/terms' },
   ];
 
   return (
@@ -42,9 +45,12 @@ const Navigation = () => {
               {link.name}
             </a>
           ))}
-          <button className="px-6 py-2.5 bg-gradient-primary rounded-full text-sm font-semibold text-white shadow-lg shadow-accent-primary/20 hover:scale-105 transition-transform">
+          <a
+            href="https://app.onlyppv.io"
+            className="px-6 py-2.5 bg-gradient-primary rounded-full text-sm font-semibold text-white shadow-lg shadow-accent-primary/20 hover:scale-105 transition-transform"
+          >
             Get Started
-          </button>
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -75,9 +81,12 @@ const Navigation = () => {
               {link.name}
             </a>
           ))}
-          <button className="w-full px-6 py-3 bg-gradient-primary rounded-full text-base font-semibold text-white shadow-lg shadow-accent-primary/20">
+          <a
+            href="https://app.onlyppv.io"
+            className="w-full px-6 py-3 bg-gradient-primary rounded-full text-base font-semibold text-white shadow-lg shadow-accent-primary/20"
+          >
             Get Started
-          </button>
+          </a>
         </motion.div>
       )}
     </nav>

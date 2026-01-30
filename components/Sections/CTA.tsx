@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Calendar, Mail, ArrowRight } from 'lucide-react';
 
 const CTA = () => {
   return (
@@ -19,27 +20,70 @@ const CTA = () => {
             Join 200+ OnlyFans creators who are already automating their Telegram income with OnlyPPV.
           </p>
 
-          <form 
-            className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-8"
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <div className="relative flex-1 overflow-hidden group">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full px-6 py-4 bg-surface border border-white/10 rounded-full text-white focus:outline-none focus:border-accent-primary transition-colors"
-                required
-              />
-              <div className="absolute inset-0 bg-accent-primary/0 group-focus-within:bg-accent-primary/10 blur-lg transition-all" />
+          {/* Two CTAs */}
+          <div className="grid md:grid-cols-2 gap-12 mb-12">
+            {/* Get Started Card */}
+            <div className="liquid-glass relative p-8 text-left overflow-hidden group">
+              <div className="absolute inset-0 bg-accent-primary/5 blur-lg group-hover:bg-accent-primary/10 transition-all" />
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold mb-4 text-white">Get Started Now</h3>
+                <p className="text-text-secondary mb-6">Ready to automate your sales immediately?</p>
+
+                <a
+                  href="https://app.onlyppv.io"
+                  className="block w-full relative overflow-hidden px-6 py-4 bg-gradient-primary rounded-full font-bold text-lg text-white shadow-lg shadow-accent-primary/20 hover:scale-105 transition-transform group"
+                >
+                  <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    Automate Your Telegram
+                    <ArrowRight size={20} />
+                  </span>
+                </a>
+              </div>
             </div>
-             <button className="relative px-8 py-4 bg-gradient-primary rounded-full font-bold text-white shadow-lg shadow-accent-primary/20 hover:scale-105 transition-transform whitespace-nowrap overflow-hidden group">
-               <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
-               <span className="relative z-10">Get Started</span>
-             </button>
-          </form>
+
+            {/* Consultation Card */}
+            <div className="liquid-glass relative p-8 text-left overflow-hidden group">
+              <div className="absolute inset-0 bg-accent-primary/5 blur-lg group-hover:bg-accent-primary/10 transition-all" />
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold mb-4 text-white">Book Free Consultation</h3>
+                <p className="text-text-secondary mb-6">Not sure yet? Let's talk about your strategy.</p>
+
+                <div className="space-y-4">
+                  {/* Email Input */}
+                  <div className="relative flex-1 overflow-hidden group">
+                    <input
+                      type="email"
+                      placeholder="Enter your email"
+                      className="w-full px-6 py-4 bg-surface border border-white/10 rounded-full text-white focus:outline-none focus:border-accent-primary transition-colors"
+                    />
+                    <div className="absolute inset-0 bg-accent-primary/0 group-focus-within:bg-accent-primary/10 blur-lg transition-all" />
+                  </div>
+
+                  {/* Google Calendar Link */}
+                  <a
+                    href="https://calendly.com/parnyuk.vladislav"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block relative overflow-hidden w-full px-6 py-4 bg-surface border border-white/10 rounded-full text-white hover:bg-white/10 hover:border-accent-primary/30 transition-all group"
+                  >
+                    <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/10 blur-lg transition-all" />
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      <Calendar size={20} />
+                      Book via Google Calendar
+                    </span>
+                  </a>
+                </div>
+
+                <p className="text-sm text-text-secondary italic leading-relaxed">
+                  All appointments will be sent to <span className="text-accent-primary font-medium">parnyuk.vladislav@gmail.com</span>
+                </p>
+              </div>
+            </div>
+          </div>
 
           <p className="text-sm text-text-secondary italic">
-            "Automate the chat. Focus on the content. Maximize the profit."
+            "Automate your chat. Focus on content. Maximize your profit."
           </p>
         </motion.div>
       </div>
