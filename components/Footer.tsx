@@ -15,9 +15,9 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center gap-8 text-sm text-text-secondary">
-            <a href="/contact" className="hover:text-white transition-colors">Contact</a>
-            <a href="/privacy" className="hover:text-white transition-colors">Privacy</a>
-            <a href="/terms" className="hover:text-white transition-colors">Terms</a>
+            <a href="https://www.onlyppv.io/contact" className="hover:text-white transition-colors">Contact</a>
+            <a href="https://www.onlyppv.io/privacy" className="hover:text-white transition-colors">Privacy</a>
+            <a href="https://www.onlyppv.io/terms" className="hover:text-white transition-colors">Terms</a>
           </div>
 
           <div className="text-center md:text-right">

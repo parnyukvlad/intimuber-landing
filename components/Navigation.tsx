@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Calendar } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,37 +28,38 @@ const Navigation = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        {/* OnlyPPV logo */}
-        <div className="flex items-center gap-6">
-          <div className="text-2xl font-black tracking-tighter text-white">
-            <a href="https://app.onlyppv.io" className="hover:text-accent-primary transition-colors">
-              ONLY<span className="text-accent-primary">PPV</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Desktop Nav */}
-      <div className="hidden md:flex items-center space-x-8">
-        {navLinks.map((link) => (
-          <a
-            key={link.name}
-            href={link.href}
-            className="text-sm font-medium text-text-secondary hover:text-white transition-colors"
-          >
-            {link.name}
+        {/* Left: OnlyPPV logo */}
+        <div className="text-2xl font-black tracking-tighter text-white">
+          <a href="https://app.onlyppv.io" className="hover:text-accent-primary transition-colors">
+            ONLY<span className="text-accent-primary">PPV</span>
           </a>
-        ))}
-      </div>
+        </div>
 
-      {/* Mobile Toggle */}
-      <div className="md:hidden">
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="text-white p-2"
-        >
-          {isMobileMenuOpen ? <X /> : <Menu />}
-        </button>
+        {/* Center: Empty for spacing */}
+        <div className="flex-1" />
+
+        {/* Right: Nav links */}
+        <div className="hidden md:flex items-center space-x-8">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="text-sm font-medium text-text-secondary hover:text-white transition-colors"
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
+
+        {/* Mobile Toggle */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-white p-2"
+          >
+            {isMobileMenuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
