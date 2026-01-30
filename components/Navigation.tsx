@@ -28,22 +28,13 @@ const Navigation = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        {/* Left side: OnlyPPV logo + Book Consultation button */}
+        {/* OnlyPPV logo */}
         <div className="flex items-center gap-6">
           <div className="text-2xl font-black tracking-tighter text-white">
             <a href="https://app.onlyppv.io" className="hover:text-accent-primary transition-colors">
               ONLY<span className="text-accent-primary">PPV</span>
             </a>
           </div>
-
-          {/* Book Free Consultation Button in Header */}
-          <a
-            href="https://app.onlyppv.io"
-            className="relative px-5 py-2 bg-gradient-primary rounded-full text-sm font-semibold text-white shadow-lg shadow-accent-primary/20 hover:scale-105 transition-transform overflow-hidden group"
-          >
-            <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
-            <span className="relative z-10">Book Free Consultation</span>
-          </a>
         </div>
       </div>
 

@@ -79,9 +79,37 @@ const CTA = () => {
             </div>
           </div>
 
+          <p className="text-xl text-text-secondary mb-12 max-w-2xl mx-auto">
+            Join 200+ OnlyFans creators who are already automating their Telegram income with OnlyPPV.
+          </p>
+ 
+          {/* Book Free Consultation Card */}
+          <div className="liquid-glass relative p-8 text-left overflow-hidden group">
+            <div className="absolute inset-0 bg-accent-primary/5 blur-lg group-hover:bg-accent-primary/10 transition-all" />
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold mb-4 text-white">Book Free Consultation</h3>
+              <p className="text-text-secondary mb-6">Not sure yet? Let's talk about your strategy.</p>
+ 
+              {/* Google Calendar Link */}
+              <a
+                href="http://calendly.com/onlyppv"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block relative overflow-hidden w-full px-6 py-4 bg-surface border border-white/10 rounded-full text-white hover:bg-white/10 hover:border-accent-primary/30 transition-all group"
+              >
+                <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/10 blur-lg transition-all" />
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  <Calendar size={20} />
+                  Book via Google Calendar
+                </span>
+              </a>
+            </div>
+          </div>
+
           <p className="text-sm text-text-secondary italic">
             "Book free consultation. Focus on content. Maximize your profit."
           </p>
+
         </motion.div>
       </div>
     </section>
