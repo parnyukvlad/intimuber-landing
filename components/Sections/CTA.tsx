@@ -62,7 +62,7 @@ const CTA = () => {
 
                   {/* Google Calendar Link */}
                   <a
-                    href="https://calendly.com/parnyuk.vladislav"
+                    href="http://calendly.com/onlyppv"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block relative overflow-hidden w-full px-6 py-4 bg-surface border border-white/10 rounded-full text-white hover:bg-white/10 hover:border-accent-primary/30 transition-all group"
@@ -75,15 +75,12 @@ const CTA = () => {
                   </a>
                 </div>
 
-                <p className="text-sm text-text-secondary italic leading-relaxed">
-                  All appointments will be sent to <span className="text-accent-primary font-medium">parnyuk.vladislav@gmail.com</span>
-                </p>
               </div>
             </div>
           </div>
 
           <p className="text-sm text-text-secondary italic">
-            "Automate your chat. Focus on content. Maximize your profit."
+            "Book free consultation. Focus on content. Maximize your profit."
           </p>
         </motion.div>
       </div>

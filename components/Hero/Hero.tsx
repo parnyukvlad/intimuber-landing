@@ -28,19 +28,15 @@ const Hero = () => {
                 Our autopilot sells your PPV content while you sleep. Built for OnlyFans Models, by OnlyFans Pros. Keep 70% of everything you earn.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-                <a
-                  href="https://app.onlyppv.io"
-                  className="relative w-full sm:w-auto px-8 py-4 bg-gradient-primary rounded-full font-bold text-lg text-white shadow-xl shadow-accent-primary/30 hover:scale-105 transition-transform overflow-hidden group"
-                >
-                  <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
-                  <span className="relative z-10">Automate My Telegram</span>
-                </a>
-                <a href="#overview" className="relative w-full sm:w-auto px-8 py-4 bg-surface border border-white/10 rounded-full font-bold text-lg text-white hover:bg-white/5 transition-colors overflow-hidden group">
-                  <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
-                  <span className="relative z-10">See Real Results</span>
-                </a>
-              </div>
+               <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+                 <a
+                   href="https://app.onlyppv.io"
+                   className="relative w-full sm:w-auto px-8 py-4 bg-gradient-primary rounded-full font-bold text-lg text-white shadow-xl shadow-accent-primary/30 hover:scale-105 transition-transform overflow-hidden group"
+                 >
+                   <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
+                   <span className="relative z-10">Book Free Consultation</span>
+                 </a>
+               </div>
 
 
             </motion.div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Calendar } from 'lucide-react';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,61 +19,67 @@ const Navigation = () => {
     { name: 'Features', href: '#features' },
     { name: 'Revenue', href: '#revenue' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Privacy', href: '/privacy' },
-    { name: 'Terms', href: '/terms' },
   ];
 
   return (
-    <nav 
+    <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'py-4 bg-background/80 backdrop-blur-lg border-b border-white/5' : 'py-6 bg-transparent'
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <div className="text-2xl font-black tracking-tighter text-white">
-          ONLY<span className="text-accent-primary">PPV</span>
-        </div>
-
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href}
-              className="text-sm font-medium text-text-secondary hover:text-white transition-colors"
-            >
-              {link.name}
+        {/* Left side: OnlyPPV logo + Book Consultation button */}
+        <div className="flex items-center gap-6">
+          <div className="text-2xl font-black tracking-tighter text-white">
+            <a href="https://app.onlyppv.io" className="hover:text-accent-primary transition-colors">
+              ONLY<span className="text-accent-primary">PPV</span>
             </a>
-          ))}
+          </div>
+
+          {/* Book Free Consultation Button in Header */}
           <a
             href="https://app.onlyppv.io"
-            className="px-6 py-2.5 bg-gradient-primary rounded-full text-sm font-semibold text-white shadow-lg shadow-accent-primary/20 hover:scale-105 transition-transform"
+            className="relative px-5 py-2 bg-gradient-primary rounded-full text-sm font-semibold text-white shadow-lg shadow-accent-primary/20 hover:scale-105 transition-transform overflow-hidden group"
           >
-            Get Started
+            <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
+            <span className="relative z-10">Book Free Consultation</span>
           </a>
         </div>
+      </div>
 
-        {/* Mobile Toggle */}
-        <div className="md:hidden">
-          <button 
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-white p-2"
+      {/* Desktop Nav */}
+      <div className="hidden md:flex items-center space-x-8">
+        {navLinks.map((link) => (
+          <a
+            key={link.name}
+            href={link.href}
+            className="text-sm font-medium text-text-secondary hover:text-white transition-colors"
           >
-            {isMobileMenuOpen ? <X /> : <Menu />}
-          </button>
-        </div>
+            {link.name}
+          </a>
+        ))}
+      </div>
+
+      {/* Mobile Toggle */}
+      <div className="md:hidden">
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="text-white p-2"
+        >
+          {isMobileMenuOpen ? <X /> : <Menu />}
+        </button>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden absolute top-full left-0 right-0 bg-surface border-b border-white/5 p-6 space-y-4"
         >
           {navLinks.map((link) => (
-            <a 
-              key={link.name} 
+            <a
+              key={link.name}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
               className="block text-lg font-medium text-text-secondary hover:text-white"
@@ -83,9 +89,9 @@ const Navigation = () => {
           ))}
           <a
             href="https://app.onlyppv.io"
-            className="w-full px-6 py-3 bg-gradient-primary rounded-full text-base font-semibold text-white shadow-lg shadow-accent-primary/20"
+            className="block w-full px-6 py-3 bg-gradient-primary rounded-full text-base font-semibold text-white shadow-lg shadow-accent-primary/20"
           >
-            Get Started
+            Book Free Consultation
           </a>
         </motion.div>
       )}
