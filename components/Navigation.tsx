@@ -7,7 +7,7 @@ const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
+  const { language, setLanguage, t, getLocalizedHref } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,7 +57,7 @@ const Navigation = () => {
           {navLinks.map((link) => (
             <a
               key={link.name}
-              href={link.href}
+              href={getLocalizedHref(link.href)}
               className="text-sm font-medium text-text-secondary hover:text-white transition-colors"
             >
               {link.name}
@@ -143,7 +143,7 @@ const Navigation = () => {
           {navLinks.map((link) => (
             <a
               key={link.name}
-              href={link.href}
+              href={getLocalizedHref(link.href)}
               onClick={() => setIsMobileMenuOpen(false)}
               className="block text-lg font-medium text-text-secondary hover:text-white"
             >

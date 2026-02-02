@@ -2,7 +2,7 @@ import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 
 const Footer = () => {
-  const { t } = useLanguage();
+  const { t, getLocalizedHref } = useLanguage();
 
   return (
     <footer className="py-12 bg-background border-t border-white/5">
@@ -18,9 +18,9 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center gap-8 text-sm text-text-secondary">
-            <a href="https://www.onlyppv.io/contact" className="hover:text-white transition-colors">{t.footer.links.contact}</a>
-            <a href="https://www.onlyppv.io/privacy" className="hover:text-white transition-colors">{t.footer.links.privacy}</a>
-            <a href="https://www.onlyppv.io/terms" className="hover:text-white transition-colors">{t.footer.links.terms}</a>
+            <a href={`https://www.onlyppv.io${getLocalizedHref('/contact')}`} className="hover:text-white transition-colors">{t.footer.links.contact}</a>
+            <a href={`https://www.onlyppv.io${getLocalizedHref('/privacy')}`} className="hover:text-white transition-colors">{t.footer.links.privacy}</a>
+            <a href={`https://www.onlyppv.io${getLocalizedHref('/terms')}`} className="hover:text-white transition-colors">{t.footer.links.terms}</a>
           </div>
 
           <div className="text-center md:text-right">

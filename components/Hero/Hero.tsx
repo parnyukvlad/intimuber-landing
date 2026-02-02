@@ -5,7 +5,7 @@ import IPhoneMockup from './IPhoneMockup';
 import { useLanguage } from '@/context/LanguageContext';
 
 const Hero = () => {
-  const { t } = useLanguage();
+  const { t, getLocalizedHref } = useLanguage();
 
   return (
     <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
@@ -55,11 +55,11 @@ const Hero = () => {
                     <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
                     <span className="relative z-10">{t.hero.ctaPrimary}</span>
                   </a>
-                  <a href="#overview" className="relative w-full sm:w-auto px-8 py-4 bg-surface border border-white/10 rounded-full font-bold text-lg text-white hover:bg-white/5 transition-colors overflow-hidden group">
+                  <a href={getLocalizedHref('/#overview')} className="relative w-full sm:w-auto px-8 py-4 bg-surface border border-white/10 rounded-full font-bold text-lg text-white hover:bg-white/5 transition-colors overflow-hidden group">
                     <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
                     <span className="relative z-10">{t.hero.ctaSecondary}</span>
                   </a>
-                  <a href="#cta" className="relative w-full sm:w-auto px-8 py-4 bg-gradient-primary rounded-full font-bold text-lg text-white shadow-xl shadow-accent-primary/30 hover:scale-105 transition-transform overflow-hidden group">
+                  <a href={getLocalizedHref('/#cta')} className="relative w-full sm:w-auto px-8 py-4 bg-gradient-primary rounded-full font-bold text-lg text-white shadow-xl shadow-accent-primary/30 hover:scale-105 transition-transform overflow-hidden group">
                     <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
                     <span className="relative z-10">{t.hero.ctaConsultation}</span>
                   </a>
