@@ -1,33 +1,36 @@
 import React from 'react';
 import { ShieldCheck, Lock, EyeOff } from 'lucide-react';
-
-const securityFeatures = [
-  {
-    icon: Lock,
-    title: "Secure Authentication",
-    text: "We use official Telegram Business APIs. No passwords or credentials required."
-  },
-  {
-    icon: ShieldCheck,
-    title: "Data Privacy",
-    text: "Your media and customer data are encrypted and never shared with third parties."
-  },
-  {
-    icon: EyeOff,
-    title: "Discreet Operations",
-     text: "Your autopilot operates under your brand. OnlyPPV remains completely invisible."
-  }
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 const Security = () => {
+  const { t } = useLanguage();
+
+  const securityFeatures = [
+    {
+      icon: Lock,
+      title: t.security.features.auth.title,
+      text: t.security.features.auth.description
+    },
+    {
+      icon: ShieldCheck,
+      title: t.security.features.privacy.title,
+      text: t.security.features.privacy.description
+    },
+    {
+      icon: EyeOff,
+      title: t.security.features.discreet.title,
+      text: t.security.features.discreet.description
+    }
+  ];
+
   return (
     <section className="py-24 bg-surface/30 border-y border-white/5">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <div className="lg:w-1/3">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white">Built for Privacy</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white">{t.security.title}</h2>
             <p className="text-text-secondary leading-relaxed">
-              In the PPV industry, discretion and security are non-negotiable. OnlyPPV is engineered to protect your identity and your content.
+              {t.security.description}
             </p>
           </div>
 

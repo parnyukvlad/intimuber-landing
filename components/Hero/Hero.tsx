@@ -1,8 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Send } from 'lucide-react';
 import IPhoneMockup from './IPhoneMockup';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
       {/* Background Decorative Elements */}
@@ -20,12 +24,27 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
+              {/* Demo Bot Badge */}
+              <motion.a
+                href="http://telegram.me/Kimsteria"
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-[#0088cc]/10 border border-[#0088cc]/30 text-[#0088cc] hover:bg-[#0088cc]/20 transition-all group"
+              >
+                <Send size={16} />
+                <span className="text-sm font-medium">{t.hero.demoBot}</span>
+                <span className="text-xs bg-[#0088cc]/20 px-2 py-0.5 rounded-full">@Kimsteria</span>
+              </motion.a>
+
               <h1 className="text-5xl lg:text-7xl font-bold tracking-tight mb-6">
-                Turn Your Telegram Into a <br />
-                <span className="text-gradient">24/7 Money Machine.</span>
+                {t.hero.title} <br />
+                <span className="text-gradient">{t.hero.titleHighlight}</span>
               </h1>
               <p className="text-xl text-text-secondary mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                Our autopilot sells your PPV content while you sleep. Built for OnlyFans Models, by OnlyFans Pros. Keep 70% of everything you earn.
+                {t.hero.description}
               </p>
 
                <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
@@ -34,15 +53,15 @@ const Hero = () => {
                     className="relative w-full sm:w-auto px-8 py-4 bg-gradient-primary rounded-full font-bold text-lg text-white shadow-xl shadow-accent-primary/30 hover:scale-105 transition-transform overflow-hidden group"
                   >
                     <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
-                    <span className="relative z-10">Automate My Telegram</span>
+                    <span className="relative z-10">{t.hero.ctaPrimary}</span>
                   </a>
                   <a href="#overview" className="relative w-full sm:w-auto px-8 py-4 bg-surface border border-white/10 rounded-full font-bold text-lg text-white hover:bg-white/5 transition-colors overflow-hidden group">
                     <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
-                    <span className="relative z-10">See Real Results</span>
+                    <span className="relative z-10">{t.hero.ctaSecondary}</span>
                   </a>
                   <a href="#cta" className="relative w-full sm:w-auto px-8 py-4 bg-gradient-primary rounded-full font-bold text-lg text-white shadow-xl shadow-accent-primary/30 hover:scale-105 transition-transform overflow-hidden group">
                     <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
-                    <span className="relative z-10">Book Free Consultation</span>
+                    <span className="relative z-10">{t.hero.ctaConsultation}</span>
                   </a>
                </div>
 

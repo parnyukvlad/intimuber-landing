@@ -1,54 +1,57 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { UserCircle, Image, MessageSquare, Zap, BarChart3, ShieldCheck } from 'lucide-react';
-
-const props = [
-   {
-     title: "Create Your Autopilot",
-     description: "Build a custom sales automation with flirty, playful, or dominant behavioral tones and a natural texting style.",
-     icon: UserCircle,
-     color: "var(--color-accent-primary)"
-   },
-  {
-    title: "Media Library",
-    description: "Upload photos & videos, set prices in Telegram Stars, and organize into premium NSFW photo packs.",
-    icon: Image,
-    color: "var(--color-accent-secondary)"
-  },
-     {
-     title: "Smart Chatbot",
-     description: "24/7 context-aware conversations with human-like delays and multi-language support.",
-     icon: MessageSquare,
-     color: "#3B82F6"
-   },
-   {
-     title: "Automated Selling",
-     description: "Disappearing free photos create urgency while our autopilot teases and converts fans into payers.",
-     icon: Zap,
-     color: "#F59E0B"
-   },
-  {
-    title: "Deep Analytics",
-    description: "Track engagement, retention, and earnings with detailed charts and conversion analysis.",
-    icon: BarChart3,
-    color: "#10B981"
-  },
-  {
-    title: "Secure & Profitable",
-    description: "Keep 70% of your earnings with secure USDT crypto payouts and protected data.",
-    icon: ShieldCheck,
-    color: "#6366F1"
-  }
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 const ValueProp = () => {
+  const { t } = useLanguage();
+
+  const props = [
+    {
+      title: t.valueProp.features.createAutopilot.title,
+      description: t.valueProp.features.createAutopilot.description,
+      icon: UserCircle,
+      color: "var(--color-accent-primary)"
+    },
+    {
+      title: t.valueProp.features.mediaLibrary.title,
+      description: t.valueProp.features.mediaLibrary.description,
+      icon: Image,
+      color: "var(--color-accent-secondary)"
+    },
+    {
+      title: t.valueProp.features.smartChatbot.title,
+      description: t.valueProp.features.smartChatbot.description,
+      icon: MessageSquare,
+      color: "#3B82F6"
+    },
+    {
+      title: t.valueProp.features.automatedSelling.title,
+      description: t.valueProp.features.automatedSelling.description,
+      icon: Zap,
+      color: "#F59E0B"
+    },
+    {
+      title: t.valueProp.features.deepAnalytics.title,
+      description: t.valueProp.features.deepAnalytics.description,
+      icon: BarChart3,
+      color: "#10B981"
+    },
+    {
+      title: t.valueProp.features.secureProfitable.title,
+      description: t.valueProp.features.secureProfitable.description,
+      icon: ShieldCheck,
+      color: "#6366F1"
+    }
+  ];
+
   return (
     <section id="features" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-white">The OnlyPPV Advantage</h2>
+          <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-white">{t.valueProp.title}</h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
-            Everything you need to automate your Telegram business and scale your OnlyFans revenue on autopilot.
+            {t.valueProp.subtitle}
           </p>
         </div>
 

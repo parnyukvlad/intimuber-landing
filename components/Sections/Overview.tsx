@@ -1,24 +1,27 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BarChart3, DollarSign, LayoutDashboard, TrendingUp } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Overview = () => {
+  const { t } = useLanguage();
+
   const features = [
     {
-      title: "High-Level Dashboard",
-      description: "Active Personas, Total Messages, Total Earnings, Current Balance, Number of Purchases, Performance Overview, Recent Activity, and a lot more.",
+      title: t.overview.features.dashboard.title,
+      description: t.overview.features.dashboard.description,
       icon: LayoutDashboard,
       image: "/dashboard_screenshot.png"
     },
     {
-      title: "Deep Analytics",
-      description: "Engagement Rate, Retention Rate, Avg Daily/Weekly Stars, Conversion Metrics, and detailed performance tracking.",
+      title: t.overview.features.analytics.title,
+      description: t.overview.features.analytics.description,
       icon: BarChart3,
       image: "/deep_analytics.png"
     },
     {
-      title: "Finance Hub",
-      description: "Available Balance, Recent Transactions, Payout Request via USDT, PayPal, Telegram Stars, and different other options.",
+      title: t.overview.features.finance.title,
+      description: t.overview.features.finance.description,
       icon: DollarSign,
       image: "/finance_hub.png"
     }
@@ -36,14 +39,14 @@ const Overview = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-3xl lg:text-5xl font-bold mb-6 text-white"
           >
-            See Real Results
+            {t.overview.title}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             className="text-text-secondary max-w-2xl mx-auto"
           >
-            OnlyPPV gives you complete control and transparency over your automated sales operations.
+            {t.overview.subtitle}
           </motion.p>
         </div>
 

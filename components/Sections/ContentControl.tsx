@@ -1,29 +1,39 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, DollarSign, Layout, Image, Star, BarChart3 } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 const ContentControl = () => {
+  const { t } = useLanguage();
+
   const features = [
     {
-      title: "Flexible Pricing",
-      description: "Set exact star amounts per photo or video, or create value-packed tiered bundles.",
+      title: t.contentControl.cards.flexiblePricing.title,
+      description: t.contentControl.cards.flexiblePricing.description,
       icon: DollarSign,
     },
     {
-      title: "Intelligent Matching",
-      description: "The AI analyzes your uploads to match fan requests with the perfect content in real-time.",
+      title: t.contentControl.cards.intelligentMatching.title,
+      description: t.contentControl.cards.intelligentMatching.description,
       icon: Image,
     },
     {
-      title: "Automatic Conversion",
-      description: "Deliver paid content when fans are most likely to pay—no manual sending required.",
+      title: t.contentControl.cards.automaticConversion.title,
+      description: t.contentControl.cards.automaticConversion.description,
       icon: Star,
     },
     {
-      title: "Organized Library",
-      description: "Easily manage and price your entire media collection from one powerful dashboard.",
+      title: t.contentControl.cards.organizedLibrary.title,
+      description: t.contentControl.cards.organizedLibrary.description,
       icon: Layout,
     }
+  ];
+
+  const listItems = [
+    t.contentControl.features.pricing,
+    t.contentControl.features.bundles,
+    t.contentControl.features.matching,
+    t.contentControl.features.delivery
   ];
 
   return (
@@ -36,22 +46,17 @@ const ContentControl = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl lg:text-5xl font-bold mb-8 text-white leading-tight">
-              Total Control, Maximum Earnings — <br />
-              <span className="text-gradient text-2xl lg:text-4xl">Upload Your Content & Set Your Prices</span>
+              {t.contentControl.title} <br />
+              <span className="text-gradient text-2xl lg:text-4xl">{t.contentControl.titleHighlight}</span>
             </h2>
             <p className="text-text-secondary text-lg mb-10 leading-relaxed">
-              Our dashboard lets you easily organize and price your entire library so that chatter knows exactly what to send—and when to charge.
+              {t.contentControl.description}
             </p>
             
             <div className="space-y-6">
-              <p className="font-semibold text-white">You decide everything:</p>
+              <p className="font-semibold text-white">{t.contentControl.youDecide}</p>
               <ul className="space-y-4">
-                {[
-                  "Exact star amount per photo/video",
-                  "Bundles or tiered pricing",
-                  "Intelligent matching to fan requests",
-                  "Automated delivery in peak moments"
-                ].map((item, i) => (
+                {listItems.map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-text-secondary">
                     <CheckCircle2 className="text-accent-primary shrink-0" size={20} />
                     <span>{item}</span>
@@ -62,7 +67,7 @@ const ContentControl = () => {
 
             <div className="mt-12 p-8 bg-accent-primary/5 border border-accent-primary/10 rounded-3xl">
               <p className="text-white font-medium italic">
-                "No more manual sending. No more 'forgot to charge' lost sales. Just pure profit."
+                &ldquo;{t.contentControl.quote}&rdquo;
               </p>
             </div>
           </motion.div>

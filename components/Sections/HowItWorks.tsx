@@ -1,37 +1,40 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
-const steps = [
-  {
-    number: "01",
-    title: "Connect",
-    description: "Link your Telegram Business account in under 60 seconds."
-  },
-  {
-    number: "02",
-    title: "Create Persona",
-    description: "Build your unique AI character with custom personality traits and backstory."
-  },
-  {
-    number: "03",
-    title: "Upload Content",
-    description: "Add your PPV media library and set your pricing in Telegram Stars."
-  },
-  {
-    number: "04",
-    title: "Start Earning",
-    description: "Send traffic to your Telegram business account. Our autopilot sells your content 24/7."
-  }
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 const HowItWorks = () => {
+  const { t } = useLanguage();
+
+  const steps = [
+    {
+      number: t.howItWorks.steps.connect.number,
+      title: t.howItWorks.steps.connect.title,
+      description: t.howItWorks.steps.connect.description
+    },
+    {
+      number: t.howItWorks.steps.createPersona.number,
+      title: t.howItWorks.steps.createPersona.title,
+      description: t.howItWorks.steps.createPersona.description
+    },
+    {
+      number: t.howItWorks.steps.uploadContent.number,
+      title: t.howItWorks.steps.uploadContent.title,
+      description: t.howItWorks.steps.uploadContent.description
+    },
+    {
+      number: t.howItWorks.steps.startEarning.number,
+      title: t.howItWorks.steps.startEarning.title,
+      description: t.howItWorks.steps.startEarning.description
+    }
+  ];
+
   return (
     <section id="how-it-works" className="py-24 bg-surface/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-20">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-white">Your Path to 24/7 Income</h2>
+          <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-white">{t.howItWorks.title}</h2>
           <p className="text-text-secondary max-w-2xl mx-auto">
-            Get up and running with OnlyPPV in minutes. We've automated the hard part so you can focus on creating.
+            {t.howItWorks.subtitle}
           </p>
         </div>
 

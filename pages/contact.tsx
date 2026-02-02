@@ -3,8 +3,11 @@ import Head from 'next/head';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Mail, MessageSquare } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Contact() {
+  const { t } = useLanguage();
+
   return (
     <>
       <Head>
@@ -17,13 +20,13 @@ export default function Contact() {
 
         <main className="py-24 px-6">
           <div className="container mx-auto max-w-3xl">
-            <h1 className="text-4xl font-bold mb-8">Contact Us</h1>
+            <h1 className="text-4xl font-bold mb-8">{t.contact.title}</h1>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="liquid-glass p-8 rounded-2xl">
-                <h2 className="text-2xl font-bold mb-4 text-white">Get Support</h2>
+                <h2 className="text-2xl font-bold mb-4 text-white">{t.contact.support.title}</h2>
                 <p className="text-text-secondary mb-6 leading-relaxed">
-                  Have questions or need help? Our support team is here to assist you.
+                  {t.contact.support.description}
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
@@ -31,7 +34,7 @@ export default function Contact() {
                       <Mail size={20} />
                     </div>
                     <div>
-                      <p className="text-sm text-text-secondary">Email</p>
+                      <p className="text-sm text-text-secondary">{t.contact.support.email}</p>
                       <p className="text-white font-medium">onlyppv@proton.me</p>
                     </div>
                   </div>
@@ -40,7 +43,7 @@ export default function Contact() {
                       <MessageSquare size={20} />
                     </div>
                     <div>
-                      <p className="text-sm text-text-secondary">Telegram</p>
+                      <p className="text-sm text-text-secondary">{t.contact.support.telegram}</p>
                       <p className="text-white font-medium">@onlyppv_official</p>
                     </div>
                   </div>
@@ -48,9 +51,9 @@ export default function Contact() {
               </div>
 
               <div className="liquid-glass p-8 rounded-2xl">
-                <h2 className="text-2xl font-bold mb-4 text-white">Business Inquiries</h2>
+                <h2 className="text-2xl font-bold mb-4 text-white">{t.contact.business.title}</h2>
                 <p className="text-text-secondary mb-6 leading-relaxed">
-                  Interested in partnerships or media coverage?
+                  {t.contact.business.description}
                 </p>
                   <div className="space-y-4">
                   <div className="flex items-center gap-3">
@@ -58,7 +61,7 @@ export default function Contact() {
                       <Mail size={20} />
                     </div>
                     <div>
-                      <p className="text-sm text-text-secondary">Email</p>
+                      <p className="text-sm text-text-secondary">{t.contact.business.email}</p>
                       <p className="text-white font-medium">parnyuk.vladislav@gmail.com</p>
                     </div>
                   </div>
@@ -67,9 +70,9 @@ export default function Contact() {
             </div>
 
             <div className="liquid-glass p-8 rounded-2xl">
-              <h2 className="text-2xl font-bold mb-4 text-white">Response Time</h2>
+              <h2 className="text-2xl font-bold mb-4 text-white">{t.contact.responseTime.title}</h2>
               <p className="text-text-secondary leading-relaxed">
-                We typically respond to all inquiries within 24-48 hours during business days. For urgent technical issues, please include detailed information about the problem you're experiencing.
+                {t.contact.responseTime.description}
               </p>
             </div>
           </div>

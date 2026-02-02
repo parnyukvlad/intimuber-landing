@@ -1,13 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
-const stats = [
-  { label: "Your Revenue Share", value: "70%", sub: "The highest split in the industry" },
-  { label: "Minimum Payout", value: "2000", sub: "Withdrawals in Telegram Stars" },
-  { label: "Payout Currency", value: "USDT", sub: "Instant crypto payouts on demand" },
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 const Revenue = () => {
+  const { t } = useLanguage();
+
+  const stats = [
+    { label: t.revenue.stats.revenueShare.label, value: t.revenue.stats.revenueShare.value, sub: t.revenue.stats.revenueShare.sub },
+    { label: t.revenue.stats.minPayout.label, value: t.revenue.stats.minPayout.value, sub: t.revenue.stats.minPayout.sub },
+    { label: t.revenue.stats.payoutCurrency.label, value: t.revenue.stats.payoutCurrency.value, sub: t.revenue.stats.payoutCurrency.sub },
+  ];
+
   return (
     <section id="revenue" className="py-24 bg-background">
       <div className="container mx-auto px-6">
@@ -18,17 +21,17 @@ const Revenue = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl lg:text-5xl font-bold mb-8 leading-tight text-white">
-                Premium Earnings. <br />
-                <span className="text-gradient">Professional Payouts.</span>
+                {t.revenue.title} <br />
+                <span className="text-gradient">{t.revenue.titleHighlight}</span>
               </h2>
               <p className="text-text-secondary text-lg mb-10 leading-relaxed">
-                We believe in total transparency. Our 70/30 split ensures you keep the lion's share of your hard-earned revenue while we handle the 24/7 sales operations.
+                {t.revenue.description}
               </p>
               
               <div className="space-y-6">
-                <p className="font-semibold text-white">Supported Payout Methods:</p>
+                <p className="font-semibold text-white">{t.revenue.payoutMethods}</p>
                 <div className="flex flex-wrap gap-4">
-                  {['USDT (TRC20)', 'USDT (ERC20)', 'Telegram Stars'].map((method) => (
+                  {t.revenue.methods.map((method: string) => (
                     <div key={method} className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-sm text-text-secondary">
                       {method}
                     </div>
@@ -61,7 +64,7 @@ const Revenue = () => {
 
         <div className="mt-16 text-center">
           <p className="text-2xl font-medium text-white italic">
-            "Focus on creating. We handle the rest."
+            &ldquo;{t.revenue.quote}&rdquo;
           </p>
         </div>
       </div>
