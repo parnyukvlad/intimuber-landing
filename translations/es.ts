@@ -240,11 +240,6 @@ export const es = {
       email: 'Email',
       telegram: 'Telegram',
     },
-    business: {
-      title: 'Consultas comerciales',
-      description: '¿Interesado en asociaciones o cobertura mediática?',
-      email: 'Email',
-    },
     responseTime: {
       title: 'Tiempo de respuesta',
       description: 'Normalmente respondemos a todas las consultas dentro de 24-48 horas durante días hábiles. Para problemas técnicos urgentes, por favor incluye información detallada sobre el problema que estás experimentando.',

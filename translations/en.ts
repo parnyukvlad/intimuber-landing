@@ -240,11 +240,6 @@ export const en = {
       email: 'Email',
       telegram: 'Telegram',
     },
-    business: {
-      title: 'Business Inquiries',
-      description: 'Interested in partnerships or media coverage?',
-      email: 'Email',
-    },
     responseTime: {
       title: 'Response Time',
       description: 'We typically respond to all inquiries within 24-48 hours during business days. For urgent technical issues, please include detailed information about the problem you\'re experiencing.',
