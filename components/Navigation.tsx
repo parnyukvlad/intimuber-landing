@@ -29,9 +29,9 @@ const Navigation = () => {
   };
 
   const navLinks = [
-    { name: t.nav.howItWorks, href: '#how-it-works' },
-    { name: t.nav.features, href: '#features' },
-    { name: t.nav.revenue, href: '#revenue' },
+    { name: t.nav.howItWorks, href: '/#how-it-works' },
+    { name: t.nav.features, href: '/#features' },
+    { name: t.nav.revenue, href: '/#revenue' },
     { name: t.nav.contact, href: '/contact' },
   ];
 
