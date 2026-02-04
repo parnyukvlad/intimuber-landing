@@ -34,7 +34,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-sm text-text-secondary">{t.contact.support.email}</p>
-                    <p className="text-white font-medium">onlyppv@proton.me</p>
+                    <p className="text-white font-medium">onlyppvtest@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">

@@ -32,7 +32,7 @@ const CTA = () => {
 
               {/* Google Calendar Link */}
               <a
-                href="http://calendly.com/onlyppv"
+                href="https://calendar.app.google/oAJ2SoVRcGjDkNdu8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block relative overflow-hidden w-full px-6 py-4 bg-surface border border-white/10 rounded-full text-white hover:bg-white/10 hover:border-accent-primary/30 transition-all group"
