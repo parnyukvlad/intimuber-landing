@@ -43,9 +43,9 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Left: OnlyPPV logo */}
-        <div className="text-2xl font-black tracking-tighter text-white">
-          <a href="https://app.onlyppv.io" className="hover:text-accent-primary transition-colors">
-            ONLY<span className="text-accent-primary">PPV</span>
+        <div>
+          <a href="https://www.onlyppv.io/" className="hover:opacity-80 transition-opacity">
+            <img src="/No background.png" alt="OnlyPPV" className="h-10 w-auto" />
           </a>
         </div>
 

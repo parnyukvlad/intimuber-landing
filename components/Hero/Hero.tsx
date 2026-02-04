@@ -48,22 +48,22 @@ const Hero = () => {
               </p>
 
                <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-                  <a
-                    href="https://app.onlyppv.io"
-                    className="relative w-full sm:w-auto px-8 py-4 bg-gradient-primary rounded-full font-bold text-lg text-white shadow-xl shadow-accent-primary/30 hover:scale-105 transition-transform overflow-hidden group"
-                  >
-                    <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
-                    <span className="relative z-10">{t.hero.ctaPrimary}</span>
-                  </a>
-                  <a href={getLocalizedHref('/#overview')} className="relative w-full sm:w-auto px-8 py-4 bg-surface border border-white/10 rounded-full font-bold text-lg text-white hover:bg-white/5 transition-colors overflow-hidden group">
-                    <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
-                    <span className="relative z-10">{t.hero.ctaSecondary}</span>
-                  </a>
-                  <a href={getLocalizedHref('/#cta')} className="relative w-full sm:w-auto px-8 py-4 bg-gradient-primary rounded-full font-bold text-lg text-white shadow-xl shadow-accent-primary/30 hover:scale-105 transition-transform overflow-hidden group">
-                    <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
-                    <span className="relative z-10">{t.hero.ctaConsultation}</span>
-                  </a>
-               </div>
+                   <a
+                     href="https://app.onlyppv.io/register"
+                     className="relative w-full sm:w-auto px-8 py-4 bg-gradient-primary rounded-full font-bold text-lg text-white shadow-xl shadow-accent-primary/30 hover:scale-105 transition-transform overflow-hidden group"
+                   >
+                     <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
+                     <span className="relative z-10">{t.hero.ctaPrimary}</span>
+                   </a>
+                   <a href={getLocalizedHref('/#overview')} className="relative w-full sm:w-auto px-8 py-4 bg-gradient-primary rounded-full font-bold text-lg text-white shadow-xl shadow-accent-primary/30 hover:scale-105 transition-transform overflow-hidden group">
+                     <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
+                     <span className="relative z-10">{t.hero.ctaSecondary}</span>
+                   </a>
+                   <a href={getLocalizedHref('/#cta')} className="relative w-full sm:w-auto px-8 py-4 bg-gradient-primary rounded-full font-bold text-lg text-white shadow-xl shadow-accent-primary/30 hover:scale-105 transition-transform overflow-hidden group">
+                     <div className="absolute inset-0 bg-accent-primary/0 group-hover:bg-accent-primary/20 blur-xl transition-all" />
+                     <span className="relative z-10">{t.hero.ctaConsultation}</span>
+                   </a>
+                </div>
 
 
             </motion.div>
