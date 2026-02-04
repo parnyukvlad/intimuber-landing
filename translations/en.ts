@@ -16,7 +16,7 @@ export const en = {
     ctaPrimary: 'Automate My Telegram',
     ctaSecondary: 'See Real Results',
     ctaConsultation: 'Book Free Consultation',
-    demoBot: 'Try Demo Bot',
+    demoBot: 'Try Demo',
   },
 
   // Value Prop
