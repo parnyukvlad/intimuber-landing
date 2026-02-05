@@ -45,7 +45,7 @@ const Navigation = () => {
         {/* Left: OnlyPPV logo */}
         <div>
           <a href="https://www.onlyppv.io/" className="hover:opacity-80 transition-opacity">
-            <img src="/No background.png" alt="OnlyPPV" className="h-16 w-auto" />
+            <img src="/No background.png" alt="OnlyPPV" className="h-40 w-auto" />
           </a>
         </div>
 
